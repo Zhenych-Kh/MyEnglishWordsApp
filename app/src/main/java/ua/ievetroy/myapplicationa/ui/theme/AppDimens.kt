@@ -113,7 +113,7 @@ object AppDimens {
 
     object ListenWordButton {
         val sizeIcon: Dp
-            @Composable get() = Base.scaledDp(28f, 20.dp, 36.dp)
+            @Composable get() = Base.scaledDp(27f, 20.dp, 36.dp)
     }
 
 }
