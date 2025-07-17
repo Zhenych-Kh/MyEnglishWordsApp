@@ -1,5 +1,6 @@
 package ua.ievetroy.myapplicationa.ui.components.buttons
 
+import android.R.attr.onClick
 import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -28,11 +29,10 @@ fun ContextMenuButton() {
     )
 }
 
-@Preview
 @Composable
-fun RotateCardButtonWordCard() {
+fun RotateCardButtonWordCard(onClick: () -> Unit) {
     AdaptiveIconButton(
-        onClick = {},
+        onClick = onClick,
         iconResId = R.drawable._flip,
         buttonSize = AppDimens.FlipButton.sizeButton,
         showButton = AppDimens.screenHeightDp >= 450,
@@ -40,9 +40,9 @@ fun RotateCardButtonWordCard() {
 }
 
 @Composable
-fun RotateCardButtonTopBar() {
+fun RotateCardButtonTopBar(onClick: () -> Unit) {
     AdaptiveIconButton(
-        onClick = {},
+        onClick = onClick,
         iconResId = R.drawable._flip,
         buttonSize = AppDimens.FlipButton.sizeButton,
         showButton = AppDimens.screenHeightDp <= 450,

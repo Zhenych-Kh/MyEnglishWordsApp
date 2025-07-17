@@ -3,6 +3,8 @@ package ua.ievetroy.myapplicationa.ui.screens
 import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
@@ -12,6 +14,8 @@ import ua.ievetroy.myapplicationa.ui.components.bars.BottomBar
 import ua.ievetroy.myapplicationa.ui.components.bars.TopBar
 import ua.ievetroy.myapplicationa.ui.theme.AppColors
 import ua.ievetroy.myapplicationa.ui.theme.AppModifiers
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
 
 @Composable
 fun SetStatusBarColors(isDarkTheme: Boolean) {
@@ -27,16 +31,26 @@ fun SetStatusBarColors(isDarkTheme: Boolean) {
 @Preview
 @Composable
 fun MainScreen() {
+
+    var isFlipped by remember { mutableStateOf(false) }
     SetStatusBarColors(isDarkTheme = false)
+
     Column(
         modifier = AppModifiers.rootColumnModifier
     ) {
-        TopBar(AppModifiers.topBarModifier)
+        TopBar(
+            modifier = AppModifiers.topBarModifier,
+            onFlip = { isFlipped = !isFlipped }
+        )
         WordCard(
+            isFlipped = isFlipped,
+            onFlip = { isFlipped = !isFlipped },
             modifier = Modifier
                 .weight(1f)
                 .then(AppModifiers.wordCardModifier)
         )
-        BottomBar(AppModifiers.bottomBarModifier)
+        BottomBar(
+            AppModifiers.bottomBarModifier
+        )
     }
 }

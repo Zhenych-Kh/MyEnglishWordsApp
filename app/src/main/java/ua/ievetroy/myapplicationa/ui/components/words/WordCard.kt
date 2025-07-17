@@ -1,24 +1,45 @@
 package ua.ievetroy.myapplicationa.ui.components.words
 
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import ua.ievetroy.myapplicationa.data.dummy.sampleWords
-import ua.ievetroy.myapplicationa.ui.components.buttons.RotateCardButtonWordCard
-import ua.ievetroy.myapplicationa.ui.theme.AppDimens
-import ua.ievetroy.myapplicationa.ui.theme.AppModifiers
 import ua.ievetroy.myapplicationa.ui.components.shadows.uniformShadow
+import ua.ievetroy.myapplicationa.ui.theme.AppDimens
 
 @Composable
-fun WordCard(modifier: Modifier = Modifier) {
+fun WordCard(
+    isFlipped: Boolean,
+    onFlip: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    val rotationY by animateFloatAsState(
+        targetValue = if (isFlipped) 180f else 0f,
+        animationSpec = tween(600),
+        label = "flip"
+    )
+
+    val cameraDistance = 12 * LocalDensity.current.density
     val cornerRadius = AppDimens.WordCard.cornerRadius
 
     Box(
         modifier = modifier
+            .graphicsLayer {
+                this.rotationY = rotationY
+                this.cameraDistance = cameraDistance
+            }
             .uniformShadow(
                 alpha = 0.3f,
                 cornerRadius = cornerRadius,
@@ -28,20 +49,13 @@ fun WordCard(modifier: Modifier = Modifier) {
             )
             .background(Color.White, shape = RoundedCornerShape(cornerRadius))
     ) {
-        Column(modifier = Modifier.fillMaxSize()) {
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(
-                        top = AppDimens.FlipButton.paddingTop,
-                        end = AppDimens.FlipButton.paddingEnd
-                    ),
-                horizontalArrangement = Arrangement.End
-            ) {
-                RotateCardButtonWordCard()
+        if (rotationY <= 90f) {
+            FrontSide(onFlip = onFlip)
+        } else {
+            Box(modifier = Modifier.graphicsLayer { this.rotationY = 180f }) {
+                BackSide(onFlip = onFlip)
             }
-
-            WordList(words = sampleWords)
         }
     }
 }
+
