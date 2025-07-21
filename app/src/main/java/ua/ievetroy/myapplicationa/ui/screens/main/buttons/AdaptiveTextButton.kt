@@ -1,4 +1,4 @@
-package ua.ievetroy.myapplicationa.ui.components.buttons
+package ua.ievetroy.myapplicationa.ui.screens.main.buttons
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column

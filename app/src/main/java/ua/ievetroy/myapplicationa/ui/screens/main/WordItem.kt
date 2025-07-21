@@ -1,4 +1,4 @@
-package ua.ievetroy.myapplicationa.ui.components.words
+package ua.ievetroy.myapplicationa.ui.screens.main
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -10,7 +10,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import ua.ievetroy.myapplicationa.data.model.Word
-import ua.ievetroy.myapplicationa.ui.components.divider.AppDivider
+import ua.ievetroy.myapplicationa.ui.screens.main.divider.AppDivider
 import ua.ievetroy.myapplicationa.ui.theme.AppDimens
 import ua.ievetroy.myapplicationa.ui.theme.AppTypography
 import androidx.compose.animation.AnimatedVisibility
@@ -20,9 +20,7 @@ import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.material3.ripple
-import ua.ievetroy.myapplicationa.ui.components.buttons.VoiceActingButton
-import androidx.compose.animation.*
-import androidx.compose.ui.Alignment
+import ua.ievetroy.myapplicationa.ui.screens.main.buttons.VoiceActingButton
 
 @Composable
 fun WordItem(word: Word, modifier: Modifier = Modifier) {

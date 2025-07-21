@@ -1,4 +1,4 @@
-package ua.ievetroy.myapplicationa.ui.components.words
+package ua.ievetroy.myapplicationa.ui.screens.main.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -12,7 +12,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import ua.ievetroy.myapplicationa.ui.components.buttons.RotateCardButtonWordCard
+import ua.ievetroy.myapplicationa.ui.screens.main.buttons.RotateCardButtonWordCard
 import ua.ievetroy.myapplicationa.ui.theme.AppDimens
 import ua.ievetroy.myapplicationa.ui.theme.AppTypography
 

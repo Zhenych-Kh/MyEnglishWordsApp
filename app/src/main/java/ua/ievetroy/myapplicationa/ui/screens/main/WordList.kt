@@ -1,4 +1,4 @@
-package ua.ievetroy.myapplicationa.ui.components.words
+package ua.ievetroy.myapplicationa.ui.screens.main
 
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.foundation.clickable

@@ -1,4 +1,4 @@
-package ua.ievetroy.myapplicationa.ui.components.words
+package ua.ievetroy.myapplicationa.ui.screens.main
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -7,16 +7,14 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalDensity
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import ua.ievetroy.myapplicationa.ui.components.shadows.uniformShadow
+import ua.ievetroy.myapplicationa.ui.screens.main.components.BackSide
+import ua.ievetroy.myapplicationa.ui.screens.main.components.FrontSide
 import ua.ievetroy.myapplicationa.ui.theme.AppDimens
 
 @Composable
@@ -58,4 +56,3 @@ fun WordCard(
         }
     }
 }
-

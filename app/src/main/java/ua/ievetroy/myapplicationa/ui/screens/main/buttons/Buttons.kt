@@ -1,11 +1,7 @@
-package ua.ievetroy.myapplicationa.ui.components.buttons
+package ua.ievetroy.myapplicationa.ui.screens.main.buttons
 
-import android.R.attr.onClick
-import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import ua.ievetroy.myapplicationa.R
 import ua.ievetroy.myapplicationa.ui.theme.AppDimens
 
