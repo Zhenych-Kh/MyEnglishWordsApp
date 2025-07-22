@@ -27,10 +27,10 @@ fun SetStatusBarColors(isDarkTheme: Boolean) {
     }
 }
 
-@Preview
 @Composable
-fun MainScreen() {
-
+fun MainScreen(
+    onSettingsClick: () -> Unit
+) {
     var isFlipped by remember { mutableStateOf(false) }
     SetStatusBarColors(isDarkTheme = false)
 
@@ -39,7 +39,8 @@ fun MainScreen() {
     ) {
         TopBar(
             modifier = AppModifiers.topBarModifier,
-            onFlip = { isFlipped = !isFlipped }
+            onFlip = { isFlipped = !isFlipped },
+            onSettingsClick = onSettingsClick // ← додано
         )
         WordCard(
             isFlipped = isFlipped,

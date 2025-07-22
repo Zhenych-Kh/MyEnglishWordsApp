@@ -5,11 +5,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import ua.ievetroy.myapplicationa.R
 import ua.ievetroy.myapplicationa.ui.theme.AppDimens
 
-@Preview
 @Composable
-fun SettingsButton() {
+fun SettingsButton(onClick: () -> Unit) {
     AdaptiveButton(
-        onClick = {},
+        onClick = onClick,
         iconResId = R.drawable.settings,
         buttonSize = AppDimens.ButtonSettings.sizeButton
     )

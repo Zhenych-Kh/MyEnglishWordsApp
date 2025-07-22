@@ -10,7 +10,11 @@ import ua.ievetroy.myapplicationa.ui.screens.main.buttons.RotateCardButtonTopBar
 import ua.ievetroy.myapplicationa.ui.screens.main.buttons.SettingsButton
 
 @Composable
-fun TopBar(modifier: Modifier = Modifier, onFlip: () -> Unit) {
+fun TopBar(
+    modifier: Modifier = Modifier,
+    onFlip: () -> Unit,
+    onSettingsClick: () -> Unit
+) {
     Row(
         modifier = modifier,
         verticalAlignment = Alignment.CenterVertically,
@@ -18,6 +22,6 @@ fun TopBar(modifier: Modifier = Modifier, onFlip: () -> Unit) {
     ) {
         ContextMenuButton()
         RotateCardButtonTopBar(onClick = onFlip)
-        SettingsButton()
+        SettingsButton(onClick = onSettingsClick)
     }
 }
