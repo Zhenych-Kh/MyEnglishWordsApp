@@ -13,12 +13,16 @@ import androidx.compose.ui.unit.dp
 import ua.ievetroy.myapplicationa.data.model.Word
 import ua.ievetroy.myapplicationa.ui.theme.AppDimens
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.setValue
 
 @Composable
 fun WordList(words: List<Word>) {
     val minSpacing = 5.dp
     val count = words.size
+
+    // Найнадійніше збереження стану розгортання
+    val expandedMap = remember { mutableStateMapOf<Int, Boolean>() }
 
     Column(
         modifier = Modifier
@@ -31,32 +35,34 @@ fun WordList(words: List<Word>) {
             )
     ) {
         words.forEachIndexed { index, word ->
-            var isExpanded by remember { mutableStateOf(false) }
+            val isExpanded = expandedMap[index] ?: false
 
             WordItem(
                 word = word,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clickable { isExpanded = !isExpanded }
+                    .clickable {
+                        expandedMap[index] = !isExpanded
+                    }
             )
 
             if (index != count - 1) {
-                // Фіксована частина
                 Spacer(modifier = Modifier.height(minSpacing))
 
-                // Анімована частина — змінюється в залежності від того, чи розкрито слово
                 val animatedSpacer by animateDpAsState(
                     targetValue = if (isExpanded) 0.dp else 1.dp,
                     label = "animatedSpacing"
                 )
 
-                Spacer(modifier = Modifier
-                    .fillMaxWidth()
-                    .height(animatedSpacer)
-                    .weight(1f, fill = true)
+                Spacer(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(animatedSpacer)
+                        .weight(1f, fill = true)
                 )
             }
         }
     }
 }
+
 

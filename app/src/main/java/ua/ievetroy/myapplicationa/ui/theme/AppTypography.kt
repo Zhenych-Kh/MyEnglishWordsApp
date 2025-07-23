@@ -55,7 +55,22 @@ object AppTypography {
         @Composable get() = scaledSpFixed(22f, 20f, 35f)
 
     val exampleSentenceFontSize: TextUnit
+        @Composable get() = scaledSpFixed(20f, 17f, 27f)
+
+    val wordTitleSettingsFontSize: TextUnit
         @Composable get() = scaledSpFixed(17f, 17f, 27f)
+
+    @Composable
+    fun wordTitleSettings() = TextStyle(
+        fontWeight = FontWeight.Bold,
+        fontSize = wordTitleSettingsFontSize
+    )
+
+    @Composable
+    fun wordSheetSettings() = TextStyle(
+        fontWeight = FontWeight.Normal,
+        fontSize = wordTitleSettingsFontSize
+    )
 
     @Composable
     fun labelSmall() = TextStyle(
