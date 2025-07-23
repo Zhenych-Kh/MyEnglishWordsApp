@@ -14,8 +14,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="_listenword" />
-                            <entry key="sourceFile" value="E:\imageFigma\TestApp\volumeUp.svg" />
+                            <entry key="outputName" value="close" />
+                            <entry key="sourceFile" value="E:\imageFigma\TestApp\close.svg" />
                           </map>
                         </option>
                       </PersistentState>
