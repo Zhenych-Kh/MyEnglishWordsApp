@@ -1,6 +1,7 @@
 package ua.ievetroy.myapplicationa.ui.screens.settings
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -14,7 +15,7 @@ fun SettingsScreen(onBack: () -> Unit) {
         modifier = AppModifiers.rootColumnModifier
             .padding(top = 16.dp) // ← твій внутрішній паддінг
     ) {
-        Text("Налаштування", style = AppTypography.wordTitle())
+        Row {  }
     }
 }
 
