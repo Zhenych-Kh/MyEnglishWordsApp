@@ -1,4 +1,4 @@
-package ua.ievetroy.myapplicationa.ui.screens.main.buttons
+package ua.ievetroy.myapplicationa.ui.buttons
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.size

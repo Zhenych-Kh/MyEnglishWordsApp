@@ -3,6 +3,10 @@ package ua.ievetroy.myapplicationa.ui.screens.main.buttons
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import ua.ievetroy.myapplicationa.R
+import ua.ievetroy.myapplicationa.ui.buttons.AdaptiveButton
+import ua.ievetroy.myapplicationa.ui.buttons.AdaptiveButtonVoice
+import ua.ievetroy.myapplicationa.ui.buttons.AdaptiveIconButton
+import ua.ievetroy.myapplicationa.ui.buttons.AdaptiveTextButton
 import ua.ievetroy.myapplicationa.ui.theme.AppDimens
 
 @Composable

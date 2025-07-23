@@ -1,0 +1,32 @@
+package ua.ievetroy.myapplicationa.ui.screens.settings
+
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.getValue
+
+@Composable
+fun SettingsWordCount() {
+    var selectedWordsPerDay by remember { mutableStateOf(10) }
+    var showBottomSheet by remember { mutableStateOf(false) }
+    val wordOptions = listOf(5, 7, 10)
+
+    if (showBottomSheet) {
+        WordCountBottomSheet(
+            options = wordOptions,
+            selected = selectedWordsPerDay,
+            onSelect = {
+                selectedWordsPerDay = it
+                showBottomSheet = false
+            },
+            onDismiss = { showBottomSheet = false }
+        )
+    }
+
+    SettingsItem(
+        title = "Кількість слів/день",
+        value = "$selectedWordsPerDay слів",
+        onClick = { showBottomSheet = true }
+    )
+}

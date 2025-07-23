@@ -116,4 +116,9 @@ object AppDimens {
             @Composable get() = Base.scaledDp(27f, 20.dp, 36.dp)
     }
 
+    object ExitButton {
+        val sizeButton: Dp
+            @Composable get() = Base.scaledDp(50f, 25.dp, 37.dp)
+    }
+
 }
