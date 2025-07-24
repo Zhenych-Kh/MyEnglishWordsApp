@@ -18,9 +18,10 @@ import ua.ievetroy.myapplicationa.ui.screens.settings.SettingsDivider
 import ua.ievetroy.myapplicationa.ui.theme.AppTypography
 
 @Composable
-fun SettingsToggle() {
-    var isAutoUpdateEnabled by remember { mutableStateOf(false) }
-
+fun SettingsToggle(
+    isEnabled: Boolean,
+    onToggle: (Boolean) -> Unit
+) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -30,8 +31,8 @@ fun SettingsToggle() {
     ) {
         Text("Автооновлення слів", style = AppTypography.wordTitleSettings())
         Switch(
-            checked = isAutoUpdateEnabled,
-            onCheckedChange = { isAutoUpdateEnabled = it }
+            checked = isEnabled,
+            onCheckedChange = { onToggle(it) }  // ← ViewModel update
         )
     }
 

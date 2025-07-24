@@ -8,8 +8,10 @@ import androidx.compose.runtime.getValue
 import ua.ievetroy.myapplicationa.ui.screens.settings.SettingsItem
 
 @Composable
-fun SettingsWordCount() {
-    var selectedWordsPerDay by remember { mutableStateOf(10) }
+fun SettingsWordCount(
+    selectedWordsPerDay: Int,
+    onSelect: (Int) -> Unit
+) {
     var showBottomSheet by remember { mutableStateOf(false) }
     val wordOptions = listOf(5, 7, 10)
 
@@ -18,7 +20,7 @@ fun SettingsWordCount() {
             options = wordOptions,
             selected = selectedWordsPerDay,
             onSelect = {
-                selectedWordsPerDay = it
+                onSelect(it)
                 showBottomSheet = false
             },
             onDismiss = { showBottomSheet = false }

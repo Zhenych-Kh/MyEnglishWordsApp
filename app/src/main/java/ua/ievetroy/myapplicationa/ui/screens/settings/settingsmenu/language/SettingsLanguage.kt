@@ -8,15 +8,18 @@ import androidx.compose.runtime.getValue
 import ua.ievetroy.myapplicationa.ui.screens.settings.SettingsItem
 
 @Composable
-fun SettingsLanguage() {
-    var selectedLanguage by remember { mutableStateOf("Українська") }
+fun SettingsLanguage(
+    selectedLanguage: String,
+    onSelect: (String) -> Unit)
+{
+
     var showSheet by remember { mutableStateOf(false) }
 
     if (showSheet) {
         LanguageBottomSheet(
             selectedLanguage = selectedLanguage,
             onSelect = {
-                selectedLanguage = it
+                onSelect(it)
                 showSheet = false
             },
             onDismiss = { showSheet = false }

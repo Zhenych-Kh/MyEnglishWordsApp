@@ -8,15 +8,17 @@ import androidx.compose.runtime.getValue
 import ua.ievetroy.myapplicationa.ui.screens.settings.SettingsItem
 
 @Composable
-fun SettingsTheme() {
-    var selectedTheme by remember { mutableStateOf("Світла") }
+fun SettingsTheme(
+    selectedTheme: String,
+    onSelect: (String) -> Unit
+) {
     var showSheet by remember { mutableStateOf(false) }
 
     if (showSheet) {
         ThemeBottomSheet(
             selectedTheme = selectedTheme,
             onSelect = {
-                selectedTheme = it
+                onSelect(it)            // ← ViewModel update
                 showSheet = false
             },
             onDismiss = { showSheet = false }
@@ -29,4 +31,5 @@ fun SettingsTheme() {
         onClick = { showSheet = true }
     )
 }
+
 
