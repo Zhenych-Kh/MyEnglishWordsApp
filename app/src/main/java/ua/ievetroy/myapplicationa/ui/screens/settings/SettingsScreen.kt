@@ -8,6 +8,9 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -27,6 +30,8 @@ fun SettingsScreen(
     onBack: () -> Unit,
     repository: SettingsRepository // ← новий параметр
 ) {
+    var isClosing by remember { mutableStateOf(false) }
+
     val viewModel: SettingsViewModel = viewModel(
         factory = SettingsViewModelFactory(repository)
     )
@@ -47,7 +52,12 @@ fun SettingsScreen(
                     .padding(end = 16.dp),
                 horizontalArrangement = Arrangement.End
             ) {
-                exitButton(onClick = onBack)
+                exitButton(onClick = {
+                    if (!isClosing) {
+                        isClosing = true
+                        onBack()
+                    }
+                })
             }
         }
 
