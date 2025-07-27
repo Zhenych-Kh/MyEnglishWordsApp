@@ -21,6 +21,7 @@ import ua.ievetroy.myapplicationa.ui.screens.main.bars.TopBar
 import ua.ievetroy.myapplicationa.ui.screens.main.components.ContextMenuSheet
 import ua.ievetroy.myapplicationa.ui.theme.AppColors
 import ua.ievetroy.myapplicationa.ui.theme.AppModifiers
+import ua.ievetroy.myapplicationa.ui.viewmodel.settings.SettingsViewModel
 import ua.ievetroy.myapplicationa.ui.viewmodel.wordViewModel.WordViewModel
 import ua.ievetroy.myapplicationa.ui.viewmodel.wordViewModel.WordViewModelFactory
 
@@ -37,7 +38,8 @@ fun SetStatusBarColors(isDarkTheme: Boolean) {
 
 @Composable
 fun MainScreen(
-    onSettingsClick: () -> Unit
+    onSettingsClick: () -> Unit,
+    settingsViewModel: SettingsViewModel   // ← без дефолтного значення!
 ) {
     val context = LocalContext.current
     val wordRepository: WordRepository = JsonWordRepository(context)
@@ -49,6 +51,8 @@ fun MainScreen(
     LaunchedEffect(Unit) {
         viewModel.loadAllWords()
     }
+
+    val wordsPerDay by settingsViewModel.wordsPerDay.collectAsState()
     val words by viewModel.words.collectAsState()
 
     var isFlipped by remember { mutableStateOf(false) }
@@ -72,7 +76,7 @@ fun MainScreen(
             onContextClick = { showContextMenu = true }
         )
         WordCard(
-            words = words,                  // ← передаємо список слів сюди
+            words = words.take(wordsPerDay),                  // ← передаємо список слів сюди
             isFlipped = isFlipped,
             onFlip = { isFlipped = !isFlipped },
             modifier = Modifier

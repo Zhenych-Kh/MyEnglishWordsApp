@@ -5,7 +5,7 @@ import ua.ievetroy.myapplicationa.data.model.Word
 val sampleWords: List<Word> = listOf(
     Word(
         id = 1,
-        word = "apple",
+        word = "appleууу",
         translation = "яблуко",
         example = "I eat an apple every day.",
         levels = listOf("A1"),
