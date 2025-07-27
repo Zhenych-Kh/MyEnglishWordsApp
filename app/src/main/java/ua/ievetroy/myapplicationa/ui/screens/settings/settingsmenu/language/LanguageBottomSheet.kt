@@ -33,7 +33,7 @@ fun LanguageBottomSheet(
     ModalBottomSheet(
         onDismissRequest = onDismiss,
         sheetState = sheetState,
-        containerColor = AppColors.AppBackgraundsTheme.BackgraundsLight
+        containerColor = AppColors.AppBackgraundsTheme.BackgraundsLightsettings
     ) {
         val scrollState = rememberScrollState()
         Column(

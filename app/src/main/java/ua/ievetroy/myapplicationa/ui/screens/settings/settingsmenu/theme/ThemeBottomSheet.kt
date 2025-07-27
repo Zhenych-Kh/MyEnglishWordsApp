@@ -32,7 +32,7 @@ fun ThemeBottomSheet(
     ModalBottomSheet(
         onDismissRequest = onDismiss,
         sheetState = sheetState,
-        containerColor = AppColors.AppBackgraundsTheme.BackgraundsLight
+        containerColor = AppColors.AppBackgraundsTheme.BackgraundsLightsettings
     ) {
         LazyColumn {
             itemsIndexed(themes) { index, theme ->
