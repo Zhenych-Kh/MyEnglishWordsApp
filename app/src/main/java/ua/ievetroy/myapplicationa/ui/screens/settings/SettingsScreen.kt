@@ -22,8 +22,8 @@ import ua.ievetroy.myapplicationa.ui.screens.settings.settingsmenu.theme.Setting
 import ua.ievetroy.myapplicationa.ui.screens.settings.settingsmenu.toggle.SettingsToggle
 import ua.ievetroy.myapplicationa.ui.screens.settings.settingsmenu.wordcount.SettingsWordCount
 import ua.ievetroy.myapplicationa.ui.theme.AppModifiers
-import ua.ievetroy.myapplicationa.ui.viewmodel.SettingsViewModel
-import ua.ievetroy.myapplicationa.ui.viewmodel.SettingsViewModelFactory
+import ua.ievetroy.myapplicationa.ui.viewmodel.settings.SettingsViewModel
+import ua.ievetroy.myapplicationa.ui.viewmodel.settings.SettingsViewModelFactory
 
 @Composable
 fun SettingsScreen(

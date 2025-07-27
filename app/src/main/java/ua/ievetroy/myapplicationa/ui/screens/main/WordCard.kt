@@ -12,6 +12,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
+import ua.ievetroy.myapplicationa.data.model.Word
 import ua.ievetroy.myapplicationa.ui.components.shadows.uniformShadow
 import ua.ievetroy.myapplicationa.ui.screens.main.components.BackSide
 import ua.ievetroy.myapplicationa.ui.screens.main.components.FrontSide
@@ -19,6 +20,7 @@ import ua.ievetroy.myapplicationa.ui.theme.AppDimens
 
 @Composable
 fun WordCard(
+    words: List<Word>,
     isFlipped: Boolean,
     onFlip: () -> Unit,
     modifier: Modifier = Modifier
@@ -48,7 +50,7 @@ fun WordCard(
             .background(Color.White, shape = RoundedCornerShape(cornerRadius))
     ) {
         if (rotationY <= 90f) {
-            FrontSide(onFlip = onFlip)
+            FrontSide(words = words, onFlip = onFlip)
         } else {
             Box(modifier = Modifier.graphicsLayer { this.rotationY = 180f }) {
                 BackSide(onFlip = onFlip)

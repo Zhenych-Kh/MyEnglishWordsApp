@@ -9,12 +9,16 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import ua.ievetroy.myapplicationa.data.dummy.sampleWords
+import ua.ievetroy.myapplicationa.data.model.Word
 import ua.ievetroy.myapplicationa.ui.screens.main.WordList
 import ua.ievetroy.myapplicationa.ui.screens.main.buttons.RotateCardButtonWordCard
 import ua.ievetroy.myapplicationa.ui.theme.AppDimens
 
 @Composable
-fun FrontSide(onFlip: () -> Unit) {
+fun FrontSide(
+    words: List<Word>,
+    onFlip: () -> Unit
+) {
     Column(modifier = Modifier.fillMaxSize()) {
         Row(
             modifier = Modifier
@@ -28,6 +32,7 @@ fun FrontSide(onFlip: () -> Unit) {
             RotateCardButtonWordCard(onClick = onFlip)
         }
 
-        WordList(words = sampleWords)
+        WordList(words = words) // ← список із ViewModel
     }
 }
+

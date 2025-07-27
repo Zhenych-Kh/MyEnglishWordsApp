@@ -1,8 +1,9 @@
-package ua.ievetroy.myapplicationa.ui.viewmodel
+package ua.ievetroy.myapplicationa.ui.viewmodel.settings
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import ua.ievetroy.myapplicationa.data.preferences.settings.SettingsRepository
 
@@ -12,25 +13,25 @@ class SettingsViewModel(
 
     val wordsPerDay = repository.wordsPerDay.stateIn(
         scope = viewModelScope,
-        started = SharingStarted.WhileSubscribed(5000),
+        started = SharingStarted.Companion.WhileSubscribed(5000),
         initialValue = 5
     )
 
     val selectedLanguage = repository.language.stateIn(
         scope = viewModelScope,
-        started = SharingStarted.WhileSubscribed(5000),
+        started = SharingStarted.Companion.WhileSubscribed(5000),
         initialValue = "Українська"
     )
 
     val selectedTheme = repository.theme.stateIn(
         scope = viewModelScope,
-        started = SharingStarted.WhileSubscribed(5000),
+        started = SharingStarted.Companion.WhileSubscribed(5000),
         initialValue = "Світла"
     )
 
     val toggleExample = repository.toggleExample.stateIn(
         scope = viewModelScope,
-        started = SharingStarted.WhileSubscribed(5000),
+        started = SharingStarted.Companion.WhileSubscribed(5000),
         initialValue = false
     )
 

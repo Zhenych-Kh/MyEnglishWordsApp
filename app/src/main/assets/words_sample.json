@@ -1,0 +1,126 @@
+[
+    {
+        "id": 1,
+        "word": "apple",
+        "translation": "яблуко",
+        "example": "I eat an apple every morning.",
+        "levels": [
+            "A1"
+        ],
+        "topics": [
+            "Food",
+            "Fruits"
+        ]
+    },
+    {
+        "id": 2,
+        "word": "run",
+        "translation": "бігти",
+        "example": "She can run very fast.",
+        "levels": [
+            "A1"
+        ],
+        "topics": [
+            "Actions",
+            "Sports"
+        ]
+    },
+    {
+        "id": 3,
+        "word": "dog",
+        "translation": "пес",
+        "example": "My dog loves to play fetch.",
+        "levels": [
+            "A1"
+        ],
+        "topics": [
+            "Animals"
+        ]
+    },
+    {
+        "id": 4,
+        "word": "book",
+        "translation": "книга",
+        "example": "This book is very interesting.",
+        "levels": [
+            "A1"
+        ],
+        "topics": [
+            "Education",
+            "Objects"
+        ]
+    },
+    {
+        "id": 5,
+        "word": "airport",
+        "translation": "аеропорт",
+        "example": "We arrived at the airport early.",
+        "levels": [
+            "A2"
+        ],
+        "topics": [
+            "Travel"
+        ]
+    },
+    {
+        "id": 6,
+        "word": "car",
+        "translation": "авто",
+        "example": "He bought a new car yesterday.",
+        "levels": [
+            "A1"
+        ],
+        "topics": [
+            "Transport"
+        ]
+    },
+    {
+        "id": 7,
+        "word": "house",
+        "translation": "будинок",
+        "example": "Their house is near the beach.",
+        "levels": [
+            "A1"
+        ],
+        "topics": [
+            "Home"
+        ]
+    },
+    {
+        "id": 8,
+        "word": "food",
+        "translation": "їжа",
+        "example": "This restaurant serves good food.",
+        "levels": [
+            "A1"
+        ],
+        "topics": [
+            "Food"
+        ]
+    },
+    {
+        "id": 9,
+        "word": "learn",
+        "translation": "вчити",
+        "example": "I want to learn a new language.",
+        "levels": [
+            "A1"
+        ],
+        "topics": [
+            "Education",
+            "Actions"
+        ]
+    },
+    {
+        "id": 10,
+        "word": "acknowledgement",
+        "translation": "підтвердження",
+        "example": "This sentence shows his acknowledgement.",
+        "levels": [
+            "B1"
+        ],
+        "topics": [
+            "Communication"
+        ]
+    }
+]

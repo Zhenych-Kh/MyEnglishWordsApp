@@ -1,4 +1,4 @@
-package ua.ievetroy.myapplicationa.ui.viewmodel
+package ua.ievetroy.myapplicationa.ui.viewmodel.settings
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

@@ -2,19 +2,27 @@ package ua.ievetroy.myapplicationa.ui.screens.main
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.SideEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
+import ua.ievetroy.myapplicationa.data.repository.JsonWordRepository
+import ua.ievetroy.myapplicationa.data.repository.WordRepository
 import ua.ievetroy.myapplicationa.ui.screens.main.bars.BottomBar
 import ua.ievetroy.myapplicationa.ui.screens.main.bars.TopBar
 import ua.ievetroy.myapplicationa.ui.screens.main.components.ContextMenuSheet
 import ua.ievetroy.myapplicationa.ui.theme.AppColors
 import ua.ievetroy.myapplicationa.ui.theme.AppModifiers
+import ua.ievetroy.myapplicationa.ui.viewmodel.wordViewModel.WordViewModel
+import ua.ievetroy.myapplicationa.ui.viewmodel.wordViewModel.WordViewModelFactory
 
 @Composable
 fun SetStatusBarColors(isDarkTheme: Boolean) {
@@ -31,6 +39,18 @@ fun SetStatusBarColors(isDarkTheme: Boolean) {
 fun MainScreen(
     onSettingsClick: () -> Unit
 ) {
+    val context = LocalContext.current
+    val wordRepository: WordRepository = JsonWordRepository(context)
+    val viewModel: WordViewModel = viewModel(
+        factory = WordViewModelFactory(wordRepository)
+    )
+
+    // Завантажити слова лише раз
+    LaunchedEffect(Unit) {
+        viewModel.loadAllWords()
+    }
+    val words by viewModel.words.collectAsState()
+
     var isFlipped by remember { mutableStateOf(false) }
     var showContextMenu by remember { mutableStateOf(false) }
 
@@ -49,9 +69,10 @@ fun MainScreen(
             modifier = AppModifiers.topBarModifier,
             onFlip = { isFlipped = !isFlipped },
             onSettingsClick = onSettingsClick,
-            onContextClick = { showContextMenu = true } // ← додано
+            onContextClick = { showContextMenu = true }
         )
         WordCard(
+            words = words,                  // ← передаємо список слів сюди
             isFlipped = isFlipped,
             onFlip = { isFlipped = !isFlipped },
             modifier = Modifier
@@ -63,3 +84,4 @@ fun MainScreen(
         )
     }
 }
+
