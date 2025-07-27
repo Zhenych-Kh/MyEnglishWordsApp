@@ -13,14 +13,15 @@ import ua.ievetroy.myapplicationa.ui.screens.main.buttons.SettingsButton
 fun TopBar(
     modifier: Modifier = Modifier,
     onFlip: () -> Unit,
-    onSettingsClick: () -> Unit
+    onSettingsClick: () -> Unit,
+    onContextClick: () -> Unit
 ) {
     Row(
         modifier = modifier,
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
-        ContextMenuButton()
+        ContextMenuButton(onClick = onContextClick)
         RotateCardButtonTopBar(onClick = onFlip)
         SettingsButton(onClick = onSettingsClick)
     }

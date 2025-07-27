@@ -18,11 +18,10 @@ fun SettingsButton(onClick: () -> Unit) {
     )
 }
 
-@Preview
 @Composable
-fun ContextMenuButton() {
+fun ContextMenuButton(onClick: () -> Unit) {
     AdaptiveButton(
-        onClick = {},
+        onClick = onClick,
         iconResId = R.drawable._contextmenu,
         buttonSize = AppDimens.ContextMenuButton.sizeButton
     )

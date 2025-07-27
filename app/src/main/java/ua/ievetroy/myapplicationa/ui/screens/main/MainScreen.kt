@@ -13,6 +13,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import ua.ievetroy.myapplicationa.ui.screens.main.bars.BottomBar
 import ua.ievetroy.myapplicationa.ui.screens.main.bars.TopBar
+import ua.ievetroy.myapplicationa.ui.screens.main.components.ContextMenuSheet
 import ua.ievetroy.myapplicationa.ui.theme.AppColors
 import ua.ievetroy.myapplicationa.ui.theme.AppModifiers
 
@@ -32,7 +33,15 @@ fun MainScreen(
     onSettingsClick: () -> Unit
 ) {
     var isFlipped by remember { mutableStateOf(false) }
+    var showContextMenu by remember { mutableStateOf(false) }
+
     SetStatusBarColors(isDarkTheme = false)
+
+    if (showContextMenu) {
+        ContextMenuSheet(
+            onDismiss = { showContextMenu = false }
+        )
+    }
 
     Column(
         modifier = AppModifiers.rootColumnModifier
@@ -40,7 +49,8 @@ fun MainScreen(
         TopBar(
             modifier = AppModifiers.topBarModifier,
             onFlip = { isFlipped = !isFlipped },
-            onSettingsClick = onSettingsClick // ← додано
+            onSettingsClick = onSettingsClick,
+            onContextClick = { showContextMenu = true } // ← додано
         )
         WordCard(
             isFlipped = isFlipped,
