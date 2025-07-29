@@ -1,126 +1,102 @@
 [
-    {
-        "id": 1,
-        "word": "apple",
-        "translation": "яблуко",
-        "example": "I eat an apple every morning.",
-        "levels": [
-            "A1"
-        ],
-        "topics": [
-            "Food",
-            "Fruits"
-        ]
-    },
-    {
-        "id": 2,
-        "word": "run",
-        "translation": "бігти",
-        "example": "She can run very fast.",
-        "levels": [
-            "A1"
-        ],
-        "topics": [
-            "Actions",
-            "Sports"
-        ]
-    },
-    {
-        "id": 3,
-        "word": "dog",
-        "translation": "пес",
-        "example": "My dog loves to play fetch.",
-        "levels": [
-            "A1"
-        ],
-        "topics": [
-            "Animals"
-        ]
-    },
-    {
-        "id": 4,
-        "word": "book",
-        "translation": "книга",
-        "example": "This book is very interesting.",
-        "levels": [
-            "A1"
-        ],
-        "topics": [
-            "Education",
-            "Objects"
-        ]
-    },
-    {
-        "id": 5,
-        "word": "airport",
-        "translation": "аеропорт",
-        "example": "We arrived at the airport early.",
-        "levels": [
-            "A2"
-        ],
-        "topics": [
-            "Travel"
-        ]
-    },
-    {
-        "id": 6,
-        "word": "car",
-        "translation": "авто",
-        "example": "He bought a new car yesterday.",
-        "levels": [
-            "A1"
-        ],
-        "topics": [
-            "Transport"
-        ]
-    },
-    {
-        "id": 7,
-        "word": "house",
-        "translation": "будинок",
-        "example": "Their house is near the beach.",
-        "levels": [
-            "A1"
-        ],
-        "topics": [
-            "Home"
-        ]
-    },
-    {
-        "id": 8,
-        "word": "food",
-        "translation": "їжа",
-        "example": "This restaurant serves good food.",
-        "levels": [
-            "A1"
-        ],
-        "topics": [
-            "Food"
-        ]
-    },
-    {
-        "id": 9,
-        "word": "learn",
-        "translation": "вчити",
-        "example": "I want to learn a new language.",
-        "levels": [
-            "A1"
-        ],
-        "topics": [
-            "Education",
-            "Actions"
-        ]
-    },
-    {
-        "id": 10,
-        "word": "acknowledgement",
-        "translation": "підтвердження",
-        "example": "This sentence shows his acknowledgement.",
-        "levels": [
-            "B1"
-        ],
-        "topics": [
-            "Communication"
-        ]
-    }
+    { "id": 1, "word": "apple", "translation": "яблуко", "example": "I eat an apple every morning.", "levels": ["A1"], "topics": ["Food", "Fruits"] },
+    { "id": 2, "word": "book", "translation": "книга", "example": "She is reading a book.", "levels": ["A1"], "topics": ["Education", "Objects"] },
+    { "id": 3, "word": "cat", "translation": "кіт", "example": "The cat is sleeping on the sofa.", "levels": ["A1"], "topics": ["Animals", "Home"] },
+    { "id": 4, "word": "dog", "translation": "пес", "example": "My dog loves to run outside.", "levels": ["A1"], "topics": ["Animals"] },
+    { "id": 5, "word": "pen", "translation": "ручка", "example": "Give me a pen, please.", "levels": ["A1"], "topics": ["Objects", "Education"] },
+    { "id": 6, "word": "house", "translation": "будинок", "example": "We live in a big house.", "levels": ["A1"], "topics": ["Home"] },
+    { "id": 7, "word": "school", "translation": "школа", "example": "Children go to school every morning.", "levels": ["A1"], "topics": ["Education"] },
+    { "id": 8, "word": "sun", "translation": "сонце", "example": "The sun is shining brightly.", "levels": ["A1"], "topics": ["Nature", "Weather"] },
+    { "id": 9, "word": "car", "translation": "машина", "example": "He drives a fast car.", "levels": ["A1"], "topics": ["Transport"] },
+    { "id": 10, "word": "milk", "translation": "молоко", "example": "I like to drink milk in the morning.", "levels": ["A1"], "topics": ["Food", "Drinks"] },
+    { "id": 11, "word": "table", "translation": "стіл", "example": "Put the plate on the table.", "levels": ["A1"], "topics": ["Objects", "Home"] },
+    { "id": 12, "word": "chair", "translation": "стілець", "example": "The chair is very comfortable.", "levels": ["A1"], "topics": ["Objects", "Home"] },
+    { "id": 13, "word": "water", "translation": "вода", "example": "Drink some water, please.", "levels": ["Drinks", "Nature"] },
+    { "id": 14, "word": "phone", "translation": "телефон", "example": "He is talking on the phone.", "levels": ["A2"], "topics": ["Objects", "Technology"] },
+    { "id": 15, "word": "friend", "translation": "друг", "example": "My friend helps me every day.", "levels": ["A1"], "topics": ["People", "Relations"] },
+    { "id": 16, "word": "rain", "translation": "дощ", "example": "The rain is very heavy today.", "levels": ["A2"], "topics": ["Nature", "Weather"] },
+    { "id": 17, "word": "road", "translation": "дорога", "example": "The road is long and straight.", "levels": ["A2"], "topics": ["Transport"] },
+    { "id": 18, "word": "shoe", "translation": "черевик", "example": "I lost my left shoe.", "levels": ["A2"], "topics": ["Clothes", "Objects"] },
+    { "id": 19, "word": "shirt", "translation": "сорочка", "example": "He bought a new shirt.", "levels": ["A2"], "topics": ["Clothes"] },
+    { "id": 20, "word": "tree", "translation": "дерево", "example": "The tree is very old.", "levels": ["A1"], "topics": ["Nature", "Plants"] },
+    { "id": 21, "word": "music", "translation": "музика", "example": "I like listening to music.", "levels": ["A2"], "topics": ["Art", "Entertainment"] },
+    { "id": 22, "word": "mother", "translation": "мати", "example": "My mother is a teacher.", "levels": ["A1"], "topics": ["People", "Family"] },
+    { "id": 23, "word": "father", "translation": "батько", "example": "His father is at work.", "levels": ["A1"], "topics": ["People", "Family"] },
+    { "id": 24, "word": "door", "translation": "двері", "example": "Please close the door.", "levels": ["A2"], "topics": ["Objects", "Home"] },
+    { "id": 25, "word": "window", "translation": "вікно", "example": "Open the window, please.", "levels": ["A2"], "topics": ["Objects", "Home"] },
+    { "id": 26, "word": "doctor", "translation": "лікар", "example": "The doctor will help you.", "levels": ["A2"], "topics": ["Professions", "People"] },
+    { "id": 27, "word": "city", "translation": "місто", "example": "Kyiv is a big city.", "levels": ["A2"], "topics": ["Places"] },
+    { "id": 28, "word": "river", "translation": "річка", "example": "The river is very deep.", "levels": ["A2"], "topics": ["Nature", "Places"] },
+    { "id": 29, "word": "star", "translation": "зірка", "example": "Look at the stars in the sky.", "levels": ["A2"], "topics": ["Nature", "Space"] },
+    { "id": 30, "word": "bed", "translation": "ліжко", "example": "I sleep in my bed.", "levels": ["A2"], "topics": ["Home", "Objects"] },
+    { "id": 31, "word": "computer", "translation": "комп’ютер", "example": "He is using a computer.", "levels": ["A2"], "topics": ["Technology", "Objects"] },
+    { "id": 32, "word": "market", "translation": "ринок", "example": "We go to the market on Sundays.", "levels": ["A2"], "topics": ["Places", "Shopping"] },
+    { "id": 33, "word": "banana", "translation": "банан", "example": "The banana is yellow.", "levels": ["A1"], "topics": ["Food", "Fruits"] },
+    { "id": 34, "word": "train", "translation": "потяг", "example": "The train is late.", "levels": ["A2"], "topics": ["Transport"] },
+    { "id": 35, "word": "milk", "translation": "молоко", "example": "She puts milk in her tea.", "levels": ["A1"], "topics": ["Food", "Drinks"] },
+    { "id": 36, "word": "teacher", "translation": "вчитель", "example": "Our teacher is very kind.", "levels": ["A1"], "topics": ["Professions", "People"] },
+    { "id": 37, "word": "bread", "translation": "хліб", "example": "I bought fresh bread.", "levels": ["A1"], "topics": ["Food"] },
+    { "id": 38, "word": "bus", "translation": "автобус", "example": "We wait for the bus.", "levels": ["A2"], "topics": ["Transport"] },
+    { "id": 39, "word": "bird", "translation": "птах", "example": "The bird is singing.", "levels": ["A1"], "topics": ["Animals", "Nature"] },
+    { "id": 40, "word": "child", "translation": "дитина", "example": "The child is playing.", "levels": ["A1"], "topics": ["People", "Family"] },
+    { "id": 41, "word": "sea", "translation": "море", "example": "I like to swim in the sea.", "levels": ["A2"], "topics": ["Nature", "Places"] },
+    { "id": 42, "word": "mountain", "translation": "гора", "example": "We climbed the mountain.", "levels": ["A2"], "topics": ["Nature", "Places"] },
+    { "id": 43, "word": "sugar", "translation": "цукор", "example": "Do you want sugar in your tea?", "levels": ["A2"], "topics": ["Food"] },
+    { "id": 44, "word": "tea", "translation": "чай", "example": "Tea is a popular drink.", "levels": ["A1"], "topics": ["Food", "Drinks"] },
+    { "id": 45, "word": "fish", "translation": "риба", "example": "Fish live in the water.", "levels": ["A1"], "topics": ["Animals", "Food"] },
+    { "id": 46, "word": "dress", "translation": "сукня", "example": "She wore a red dress.", "levels": ["A2"], "topics": ["Clothes"] },
+    { "id": 47, "word": "street", "translation": "вулиця", "example": "The street is empty.", "levels": ["A2"], "topics": ["Places"] },
+    { "id": 48, "word": "shoes", "translation": "взуття", "example": "My shoes are new.", "levels": ["A2"], "topics": ["Clothes"] },
+    { "id": 49, "word": "egg", "translation": "яйце", "example": "I have an egg for breakfast.", "levels": ["A1"], "topics": ["Food"] },
+    { "id": 50, "word": "flower", "translation": "квітка", "example": "The flower is beautiful.", "levels": ["A1"], "topics": ["Nature", "Plants"] },
+    { "id": 51, "word": "market", "translation": "ринок", "example": "They buy vegetables at the market.", "levels": ["A2"], "topics": ["Places", "Shopping"] },
+    { "id": 52, "word": "window", "translation": "вікно", "example": "Close the window at night.", "levels": ["A2"], "topics": ["Home", "Objects"] },
+    { "id": 53, "word": "park", "translation": "парк", "example": "We walk in the park every weekend.", "levels": ["A2"], "topics": ["Places", "Nature"] },
+    { "id": 54, "word": "juice", "translation": "сік", "example": "Would you like some juice?", "levels": ["A1"], "topics": ["Food", "Drinks"] },
+    { "id": 55, "word": "candle", "translation": "свічка", "example": "The candle is burning.", "levels": ["A2"], "topics": ["Objects", "Home"] },
+    { "id": 56, "word": "game", "translation": "гра", "example": "Let's play a game.", "levels": ["A2"], "topics": ["Entertainment"] },
+    { "id": 57, "word": "clock", "translation": "годинник", "example": "The clock shows seven.", "levels": ["A2"], "topics": ["Objects", "Home"] },
+    { "id": 58, "word": "river", "translation": "річка", "example": "They swim in the river.", "levels": ["A2"], "topics": ["Nature", "Places"] },
+    { "id": 59, "word": "grape", "translation": "виноград", "example": "Grapes grow on vines.", "levels": ["A1"], "topics": ["Food", "Fruits"] },
+    { "id": 60, "word": "desk", "translation": "парта", "example": "My books are on the desk.", "levels": ["A1"], "topics": ["Education", "Objects"] },
+    { "id": 61, "word": "mirror", "translation": "дзеркало", "example": "Look in the mirror.", "levels": ["A2"], "topics": ["Home", "Objects"] },
+    { "id": 62, "word": "orange", "translation": "апельсин", "example": "I peel the orange.", "levels": ["A1"], "topics": ["Food", "Fruits"] },
+    { "id": 63, "word": "watch", "translation": "годинник", "example": "I wear a watch on my wrist.", "levels": ["A2"], "topics": ["Objects"] },
+    { "id": 64, "word": "milk", "translation": "молоко", "example": "Milk is white.", "levels": ["A1"], "topics": ["Food", "Drinks"] },
+    { "id": 65, "word": "lamp", "translation": "лампа", "example": "Turn on the lamp.", "levels": ["A2"], "topics": ["Objects", "Home"] },
+    { "id": 66, "word": "forest", "translation": "ліс", "example": "The forest is green in summer.", "levels": ["A2"], "topics": ["Nature", "Places"] },
+    { "id": 67, "word": "ball", "translation": "м'яч", "example": "Children play with a ball.", "levels": ["A1"], "topics": ["Entertainment", "Sports"] },
+    { "id": 68, "word": "star", "translation": "зірка", "example": "A star shines at night.", "levels": ["A1"], "topics": ["Nature", "Space"] },
+    { "id": 69, "word": "rabbit", "translation": "кролик", "example": "A rabbit eats carrots.", "levels": ["A1"], "topics": ["Animals"] },
+    { "id": 70, "word": "cloud", "translation": "хмара", "example": "There is a big cloud in the sky.", "levels": ["A2"], "topics": ["Nature", "Weather"] },
+    { "id": 71, "word": "soap", "translation": "милко", "example": "Use soap to wash your hands.", "levels": ["A2"], "topics": ["Objects", "Home"] },
+    { "id": 72, "word": "ring", "translation": "кільце", "example": "She wears a gold ring.", "levels": ["A2"], "topics": ["Objects"] },
+    { "id": 73, "word": "leaf", "translation": "листок", "example": "A leaf fell from the tree.", "levels": ["A1"], "topics": ["Nature", "Plants"] },
+    { "id": 74, "word": "cup", "translation": "чашка", "example": "The cup is full of tea.", "levels": ["A1"], "topics": ["Objects", "Drinks"] },
+    { "id": 75, "word": "ice", "translation": "лід", "example": "The ice is melting.", "levels": ["A2"], "topics": ["Nature", "Weather"] },
+    { "id": 76, "word": "king", "translation": "король", "example": "The king lives in a castle.", "levels": ["A2"], "topics": ["People", "Places"] },
+    { "id": 77, "word": "girl", "translation": "дівчина", "example": "The girl is dancing.", "levels": ["A1"], "topics": ["People"] },
+    { "id": 78, "word": "boy", "translation": "хлопець", "example": "The boy plays football.", "levels": ["A1"], "topics": ["People", "Sports"] },
+    { "id": 79, "word": "flower", "translation": "квітка", "example": "She picked a red flower.", "levels": ["A1"], "topics": ["Nature", "Plants"] },
+    { "id": 80, "word": "doctor", "translation": "лікар", "example": "The doctor works in a hospital.", "levels": ["A2"], "topics": ["Professions", "People"] },
+    { "id": 81, "word": "winter", "translation": "зима", "example": "Winter is cold in Ukraine.", "levels": ["A2"], "topics": ["Nature", "Weather"] },
+    { "id": 82, "word": "summer", "translation": "літо", "example": "Summer is hot and sunny.", "levels": ["A2"], "topics": ["Nature", "Weather"] },
+    { "id": 83, "word": "fire", "translation": "вогонь", "example": "The fire is burning.", "levels": ["A2"], "topics": ["Nature", "Home"] },
+    { "id": 84, "word": "cake", "translation": "торт", "example": "She baked a cake.", "levels": ["A1"], "topics": ["Food", "Dessert"] },
+    { "id": 85, "word": "pie", "translation": "пиріг", "example": "I ate a piece of pie.", "levels": ["A2"], "topics": ["Food", "Dessert"] },
+    { "id": 86, "word": "milk", "translation": "молоко", "example": "Please buy some milk.", "levels": ["A1"], "topics": ["Food", "Drinks"] },
+    { "id": 87, "word": "potato", "translation": "картопля", "example": "Potatoes grow in the ground.", "levels": ["A1"], "topics": ["Food", "Vegetables"] },
+    { "id": 88, "word": "pot", "translation": "горщик", "example": "The pot is on the stove.", "levels": ["A2"], "topics": ["Objects", "Home"] },
+    { "id": 89, "word": "mouse", "translation": "миша", "example": "A mouse ran into the hole.", "levels": ["A2"], "topics": ["Animals"] },
+    { "id": 90, "word": "horse", "translation": "кінь", "example": "The horse is running fast.", "levels": ["A1"], "topics": ["Animals"] },
+    { "id": 91, "word": "fox", "translation": "лисиця", "example": "The fox has a bushy tail.", "levels": ["A2"], "topics": ["Animals"] },
+    { "id": 92, "word": "cheese", "translation": "сир", "example": "He likes cheese sandwiches.", "levels": ["A1"], "topics": ["Food"] },
+    { "id": 93, "word": "soup", "translation": "суп", "example": "The soup is hot.", "levels": ["A1"], "topics": ["Food"] },
+    { "id": 94, "word": "cabbage", "translation": "капуста", "example": "Cabbage is a green vegetable.", "levels": ["A1"], "topics": ["Food", "Vegetables"] },
+    { "id": 95, "word": "onion", "translation": "цибуля", "example": "I chop the onion.", "levels": ["A1"], "topics": ["Food", "Vegetables"] },
+    { "id": 96, "word": "pencil", "translation": "олівець", "example": "Sharpen your pencil.", "levels": ["A1"], "topics": ["Education", "Objects"] },
+    { "id": 97, "word": "bread", "translation": "хліб", "example": "Bread is made from flour.", "levels": ["A1"], "topics": ["Food"] },
+    { "id": 98, "word": "bus", "translation": "автобус", "example": "He goes to school by bus.", "levels": ["A2"], "topics": ["Transport"] },
+    { "id": 99, "word": "city", "translation": "місто", "example": "Lviv is a beautiful city.", "levels": ["A2"], "topics": ["Places"] },
+    { "id": 100, "word": "fruit", "translation": "фрукт", "example": "Fruit is good for health.", "levels": ["A1"], "topics": ["Food", "Fruits"] }
 ]

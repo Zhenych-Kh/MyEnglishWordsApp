@@ -15,7 +15,7 @@ class WordViewModel(private val repository: WordRepository) : ViewModel() {
 
     fun loadAllWords() {
         viewModelScope.launch {
-            _words.value = repository.getAllWords()
+            _words.value = repository.getAllWords().shuffled()
         }
     }
 

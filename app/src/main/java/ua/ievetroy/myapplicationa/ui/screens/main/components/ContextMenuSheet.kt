@@ -37,7 +37,7 @@ fun ContextMenuSheet(
                 .padding(vertical = 8.dp)
         ) {
             Text(
-                text = "Наступне слово",
+                text = "Наступна картка",
                 modifier = Modifier
                     .fillMaxWidth()
                     .clickable(
