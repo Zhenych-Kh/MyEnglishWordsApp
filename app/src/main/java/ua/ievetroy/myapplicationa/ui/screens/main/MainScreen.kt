@@ -14,6 +14,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
+import ua.ievetroy.myapplicationa.data.preferences.words.WordOrderRepository
 import ua.ievetroy.myapplicationa.data.repository.JsonWordRepository
 import ua.ievetroy.myapplicationa.data.repository.WordRepository
 import ua.ievetroy.myapplicationa.ui.screens.main.bars.BottomBar
@@ -39,29 +40,46 @@ fun SetStatusBarColors(isDarkTheme: Boolean) {
 @Composable
 fun MainScreen(
     onSettingsClick: () -> Unit,
-    settingsViewModel: SettingsViewModel   // ← без дефолтного значення!
+    settingsViewModel: SettingsViewModel
 ) {
     val context = LocalContext.current
     val wordRepository: WordRepository = JsonWordRepository(context)
+    val wordOrderRepository = remember { WordOrderRepository(context) }
     val viewModel: WordViewModel = viewModel(
-        factory = WordViewModelFactory(wordRepository)
+        factory = WordViewModelFactory(wordRepository, wordOrderRepository)
     )
 
-    // Завантажити слова лише раз
-    LaunchedEffect(Unit) {
-        viewModel.loadAllWords()
-    }
-
+    // ----- Нове -----
     val wordsPerDay by settingsViewModel.wordsPerDay.collectAsState()
     val words by viewModel.words.collectAsState()
+    val currentPage by viewModel.currentPage.collectAsState()
+    // ----------------
 
     var isFlipped by remember { mutableStateOf(false) }
     var showContextMenu by remember { mutableStateOf(false) }
+
+    val startIndex = currentPage * wordsPerDay
+    val endIndex = (startIndex + wordsPerDay).coerceAtMost(words.size)
+    val visibleWords = if (startIndex < words.size) words.subList(startIndex, endIndex) else emptyList()
+
+
+    // --- Слідкуємо за wordsPerDay, і оновлюємо у ViewModel
+    LaunchedEffect(wordsPerDay) {
+        viewModel.resetPageIndex()
+    }
+
+    LaunchedEffect(Unit) {
+        viewModel.init()
+    }
 
     SetStatusBarColors(isDarkTheme = false)
 
     if (showContextMenu) {
         ContextMenuSheet(
+            onNext = {
+                viewModel.nextPage(wordsPerDay)
+                showContextMenu = false
+            },
             onDismiss = { showContextMenu = false }
         )
     }
@@ -76,7 +94,7 @@ fun MainScreen(
             onContextClick = { showContextMenu = true }
         )
         WordCard(
-            words = words.take(wordsPerDay),                  // ← передаємо список слів сюди
+            words = visibleWords,
             isFlipped = isFlipped,
             onFlip = { isFlipped = !isFlipped },
             modifier = Modifier
@@ -88,4 +106,6 @@ fun MainScreen(
         )
     }
 }
+
+
 

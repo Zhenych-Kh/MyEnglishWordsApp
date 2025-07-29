@@ -23,6 +23,7 @@ import ua.ievetroy.myapplicationa.ui.theme.AppTypography
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ContextMenuSheet(
+    onNext: () -> Unit,
     onDismiss: () -> Unit
 ) {
     ModalBottomSheet(
@@ -46,7 +47,9 @@ fun ContextMenuSheet(
                             bounded = true,
                             color = Color.Gray
                         ),
-                        onClick = onDismiss
+                        onClick = {
+                            onNext()      // ← ОНОВИТИ КАРТКУ
+                        }
                     )
                     .padding(vertical = 24.dp, horizontal = 20.dp),
                 style = AppTypography.wordSheetSettings()
@@ -59,3 +62,4 @@ fun ContextMenuSheet(
         }
     }
 }
+
