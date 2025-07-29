@@ -81,16 +81,11 @@ class WordViewModel(
         _words.value = orderedWords.drop(start).take(wordsPerPage)
     }
 
-    // Для “Оновити слова”/”Новий набір”
-    fun reshuffleWords() {
-        viewModelScope.launch {
-            val allWords = repository.getAllWords()
-            val shuffled = allWords.shuffled()
-            wordOrderRepository.setWordOrder(shuffled.map { it.id })
-            orderedWords = shuffled
-            _currentPage.value = 0
-            updateVisibleWords()
-        }
+    fun getVisibleWords(wordsPerDay: Int): List<Word> {
+        val startIndex = currentPage.value * wordsPerDay
+        val endIndex = (startIndex + wordsPerDay).coerceAtMost(words.value.size)
+        return if (startIndex < words.value.size) words.value.subList(startIndex, endIndex) else emptyList()
     }
+
 }
 
