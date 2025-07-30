@@ -12,18 +12,16 @@ val Context.wordOrderDataStore by preferencesDataStore(name = "word_order")
 
 object WordOrderKeys {
     val WORD_ORDER = stringPreferencesKey("word_order")
-    val PAGE_INDEX = intPreferencesKey("page_index")
+    val FIRST_VISIBLE_INDEX = intPreferencesKey("first_visible_index")
 }
 
 class WordOrderDataStore(private val context: Context) {
-    // Зберегти порядок (ID через кому)
     suspend fun setWordOrder(order: List<Int>) {
         context.wordOrderDataStore.edit {
             it[WordOrderKeys.WORD_ORDER] = order.joinToString(",")
         }
     }
 
-    // Зчитати порядок
     suspend fun getWordOrder(): List<Int> {
         val raw = context.wordOrderDataStore.data
             .map { it[WordOrderKeys.WORD_ORDER] ?: "" }
@@ -32,16 +30,16 @@ class WordOrderDataStore(private val context: Context) {
         else raw.split(",").mapNotNull { it.toIntOrNull() }
     }
 
-    // --- Додаємо для індексу сторінки ---
-    suspend fun setPageIndex(index: Int) {
+    suspend fun setFirstVisibleIndex(index: Int) {
         context.wordOrderDataStore.edit {
-            it[WordOrderKeys.PAGE_INDEX] = index
+            it[WordOrderKeys.FIRST_VISIBLE_INDEX] = index
         }
     }
 
-    suspend fun getPageIndex(): Int {
+    suspend fun getFirstVisibleIndex(): Int {
         return context.wordOrderDataStore.data
-            .map { it[WordOrderKeys.PAGE_INDEX] ?: 0 }
+            .map { it[WordOrderKeys.FIRST_VISIBLE_INDEX] ?: 0 }
             .firstOrNull() ?: 0
     }
 }
+

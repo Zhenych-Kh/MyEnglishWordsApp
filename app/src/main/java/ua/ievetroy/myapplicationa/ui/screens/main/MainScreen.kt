@@ -7,6 +7,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -21,6 +22,7 @@ import ua.ievetroy.myapplicationa.ui.viewmodel.wordViewModel.WordViewModelFactor
 import ua.ievetroy.myapplicationa.ui.screens.main.util.SetStatusBarColors
 import ua.ievetroy.myapplicationa.ui.screens.main.util.provideWordOrderRepository
 import ua.ievetroy.myapplicationa.ui.screens.main.util.provideWordRepository
+import ua.ievetroy.myapplicationa.ui.screens.settings.settingsmenu.wordcount.SettingsWordCount
 
 @Composable
 fun MainScreen(
@@ -32,8 +34,6 @@ fun MainScreen(
     val context = LocalContext.current
     val wordRepository = remember { provideWordRepository(context) }
     val wordOrderRepository = remember { provideWordOrderRepository(context) }
-
-    // --- ViewModels ---
     val viewModel: WordViewModel = viewModel(
         factory = WordViewModelFactory(wordRepository, wordOrderRepository)
     )
@@ -41,23 +41,34 @@ fun MainScreen(
     // --- State ---
     val wordsPerDay by settingsViewModel.wordsPerDay.collectAsState()
     val words by viewModel.words.collectAsState()
-    val currentPage by viewModel.currentPage.collectAsState()
+    val firstVisibleIndex by viewModel.firstVisibleIndex.collectAsState()
     var isFlipped by remember { mutableStateOf(false) }
     var showContextMenu by remember { mutableStateOf(false) }
 
-    // --- getVisibleWords ---
-    val startIndex = currentPage * wordsPerDay
+    // --- Видимі слова ---
+    val startIndex = firstVisibleIndex
     val endIndex = (startIndex + wordsPerDay).coerceAtMost(words.size)
     val visibleWords = if (startIndex < words.size) words.subList(startIndex, endIndex) else emptyList()
 
-    // --- Effects ---
-    LaunchedEffect(wordsPerDay) { viewModel.resetPageIndex() }
-    LaunchedEffect(Unit) { viewModel.init() }
+    // --- INIT ---
+    LaunchedEffect(Unit) {
+        viewModel.init()
+    }
 
+    // --- Логіка НЕ скидати картку при зміні wordsPerDay ---
+    var prevWordsPerDay by rememberSaveable { mutableStateOf(wordsPerDay) }
+    LaunchedEffect(wordsPerDay) {
+        if (prevWordsPerDay != wordsPerDay) {
+            // нічого не змінюємо — просто вікно стає ширшим або вужчим!
+            prevWordsPerDay = wordsPerDay
+        }
+    }
+
+    // --- UI ---
     if (showContextMenu) {
         ContextMenuSheet(
             onNext = {
-                viewModel.nextPage(wordsPerDay)
+                viewModel.nextCard(wordsPerDay)
                 showContextMenu = false
             },
             onDismiss = { showContextMenu = false }
@@ -86,6 +97,9 @@ fun MainScreen(
         )
     }
 }
+
+
+
 
 
 

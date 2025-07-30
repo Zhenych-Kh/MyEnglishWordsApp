@@ -33,3 +33,4 @@ fun SettingsWordCount(
         onClick = { showBottomSheet = true }
     )
 }
+

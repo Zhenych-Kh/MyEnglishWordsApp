@@ -7,6 +7,8 @@ class WordOrderRepository(context: Context) {
 
     suspend fun setWordOrder(order: List<Int>) = dataStore.setWordOrder(order)
     suspend fun getWordOrder(): List<Int> = dataStore.getWordOrder()
-    suspend fun setPageIndex(index: Int) = dataStore.setPageIndex(index)
-    suspend fun getPageIndex(): Int = dataStore.getPageIndex()
+    suspend fun setFirstVisibleIndex(index: Int) = dataStore.setFirstVisibleIndex(index)
+    suspend fun getFirstVisibleIndex(): Int = dataStore.getFirstVisibleIndex()
 }
+
+
