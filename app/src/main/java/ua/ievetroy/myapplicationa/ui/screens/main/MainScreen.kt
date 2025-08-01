@@ -3,7 +3,6 @@ package ua.ievetroy.myapplicationa.ui.screens.main
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -14,21 +13,18 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-
 import ua.ievetroy.myapplicationa.ui.SwipeWordCardPager
 import ua.ievetroy.myapplicationa.ui.screens.main.bars.BottomBar
 import ua.ievetroy.myapplicationa.ui.screens.main.bars.TopBar
 import ua.ievetroy.myapplicationa.ui.screens.main.components.ContextMenuSheet
+import ua.ievetroy.myapplicationa.ui.screens.main.util.SetStatusBarColors
+import ua.ievetroy.myapplicationa.ui.screens.main.util.provideWordOrderRepository
+import ua.ievetroy.myapplicationa.ui.screens.main.util.provideWordRepository
 import ua.ievetroy.myapplicationa.ui.theme.AppModifiers
 import ua.ievetroy.myapplicationa.ui.viewmodel.settings.SettingsViewModel
 import ua.ievetroy.myapplicationa.ui.viewmodel.wordViewModel.WordViewModel
 import ua.ievetroy.myapplicationa.ui.viewmodel.wordViewModel.WordViewModelFactory
-import ua.ievetroy.myapplicationa.ui.screens.main.util.SetStatusBarColors
-import ua.ievetroy.myapplicationa.ui.screens.main.util.provideWordOrderRepository
-import ua.ievetroy.myapplicationa.ui.screens.main.util.provideWordRepository
-import ua.ievetroy.myapplicationa.ui.screens.settings.settingsmenu.wordcount.SettingsWordCount
 
 @Composable
 fun MainScreen(
