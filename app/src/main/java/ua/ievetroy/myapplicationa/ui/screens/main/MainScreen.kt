@@ -1,6 +1,9 @@
 package ua.ievetroy.myapplicationa.ui.screens.main
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -11,7 +14,10 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+
+import ua.ievetroy.myapplicationa.ui.SwipeWordCardPager
 import ua.ievetroy.myapplicationa.ui.screens.main.bars.BottomBar
 import ua.ievetroy.myapplicationa.ui.screens.main.bars.TopBar
 import ua.ievetroy.myapplicationa.ui.screens.main.components.ContextMenuSheet
@@ -50,6 +56,10 @@ fun MainScreen(
     val endIndex = (startIndex + wordsPerDay).coerceAtMost(words.size)
     val visibleWords = if (startIndex < words.size) words.subList(startIndex, endIndex) else emptyList()
 
+    // Додаємо стан swipe
+    var swipeTrigger by remember { mutableStateOf(false) }
+
+
     // --- INIT ---
     LaunchedEffect(Unit) {
         viewModel.init()
@@ -68,7 +78,7 @@ fun MainScreen(
     if (showContextMenu) {
         ContextMenuSheet(
             onNext = {
-                viewModel.nextCard(wordsPerDay)
+                swipeTrigger = true
                 showContextMenu = false
             },
             onDismiss = { showContextMenu = false }
@@ -84,14 +94,24 @@ fun MainScreen(
             onSettingsClick = onSettingsClick,
             onContextClick = { showContextMenu = true }
         )
-        WordCard(
-            words = visibleWords,
-            isFlipped = isFlipped,
-            onFlip = { isFlipped = !isFlipped },
-            modifier = Modifier
-                .weight(1f)
-                .then(AppModifiers.wordCardModifier)
-        )
+        Box(modifier = Modifier
+            .weight(1f)) {
+            SwipeWordCardPager(
+                key = firstVisibleIndex,
+                words = visibleWords,
+                isFlipped = isFlipped,
+                onFlip = { isFlipped = !isFlipped },
+                onNext = { viewModel.nextCard(wordsPerDay) },
+                swipeTrigger = swipeTrigger,
+                onSwipeConsumed = { swipeTrigger = false }, // скинемо тригер
+                modifier = Modifier
+                    .fillMaxSize()
+                    .then(AppModifiers.wordCardModifier)
+            )
+
+
+
+        }
         BottomBar(
             AppModifiers.bottomBarModifier
         )

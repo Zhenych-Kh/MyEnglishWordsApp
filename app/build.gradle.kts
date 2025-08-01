@@ -65,4 +65,6 @@ dependencies {
     implementation("androidx.compose.material3:material3:1.1.0-alpha04")
     implementation("androidx.compose.material3:material3:1.2.1")
     implementation("com.google.code.gson:gson:2.10.1")
+    implementation("androidx.navigation:navigation-compose:2.7.7")
+    implementation("com.google.accompanist:accompanist-navigation-animation:0.35.0-alpha")
 }
