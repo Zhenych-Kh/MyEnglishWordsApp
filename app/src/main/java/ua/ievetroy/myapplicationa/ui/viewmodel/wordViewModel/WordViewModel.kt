@@ -48,14 +48,6 @@ class WordViewModel(
             wordOrderRepository.setFirstVisibleIndex(next)
         }
     }
-
-    fun setFirstVisibleIndex(index: Int) {
-        viewModelScope.launch {
-            val safe = index.coerceIn(0, (orderedWords.size - 1).coerceAtLeast(0))
-            _firstVisibleIndex.value = safe
-            wordOrderRepository.setFirstVisibleIndex(safe)
-        }
-    }
 }
 
 
