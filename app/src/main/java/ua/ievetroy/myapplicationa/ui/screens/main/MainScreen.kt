@@ -100,6 +100,10 @@ fun MainScreen(
                 onNext = { viewModel.nextCard(wordsPerDay) },
                 swipeTrigger = swipeTrigger,
                 onSwipeConsumed = { swipeTrigger = false }, // скинемо тригер
+                onSwipeLeft = { index ->
+                    viewModel.shiftVisibleWordForward(index, wordsPerDay)
+                    viewModel.refreshVisibleWords(wordsPerDay)
+                },
                 modifier = Modifier
                     .fillMaxSize()
                     .then(AppModifiers.wordCardModifier)

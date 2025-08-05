@@ -21,6 +21,8 @@ class WordViewModel(
 
     private val _firstVisibleIndex = MutableStateFlow(0)
     val firstVisibleIndex: StateFlow<Int> = _firstVisibleIndex
+    private var isShifting = false
+
 
     fun init() {
         viewModelScope.launch {
@@ -48,6 +50,37 @@ class WordViewModel(
             wordOrderRepository.setFirstVisibleIndex(next)
         }
     }
+
+    fun shiftVisibleWordForward(indexInVisible: Int, wordsPerDay: Int) {
+        viewModelScope.launch {
+            val fromIndex = _firstVisibleIndex.value + indexInVisible
+            val nextWordIndex = _firstVisibleIndex.value + wordsPerDay
+
+            if (fromIndex in orderedWords.indices && nextWordIndex < orderedWords.size) {
+                val updated = orderedWords.toMutableList()
+
+                // Зберігаємо слово, яке хочемо замінити
+                val skippedWord = updated.removeAt(fromIndex)
+
+                // Додаємо його в кінець — воно повернеться в наступному циклі
+                updated.add(skippedWord)
+
+                // Витягуємо слово із зони "ще не показаних"
+                val replacementWord = updated.removeAt(nextWordIndex - 1)
+                updated.add(fromIndex, replacementWord)
+
+                orderedWords = updated
+
+                _words.value = updated
+
+                wordOrderRepository.setWordOrder(orderedWords.map { it.id })
+            }
+        }
+    }
+    fun refreshVisibleWords(wordsPerDay: Int) {
+        _words.value = orderedWords
+    }
+
 }
 
 

@@ -23,6 +23,7 @@ fun WordCard(
     words: List<Word>,
     isFlipped: Boolean,
     onFlip: () -> Unit,
+    onSwipeLeft: (index: Int) -> Unit,
     modifier: Modifier = Modifier
 ) {
     val rotationY by animateFloatAsState(
@@ -50,7 +51,7 @@ fun WordCard(
             .background(Color.White, shape = RoundedCornerShape(cornerRadius))
     ) {
         if (rotationY <= 90f) {
-            FrontSide(words = words, onFlip = onFlip)
+            FrontSide(words = words, onFlip = onFlip, onSwipeLeft = onSwipeLeft)
         } else {
             Box(modifier = Modifier.graphicsLayer { this.rotationY = 180f }) {
                 BackSide(onFlip = onFlip)

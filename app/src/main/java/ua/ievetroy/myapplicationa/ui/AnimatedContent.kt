@@ -16,6 +16,7 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import ua.ievetroy.myapplicationa.data.model.Word
 import ua.ievetroy.myapplicationa.ui.screens.main.WordCard
 
@@ -28,6 +29,7 @@ fun SwipeWordCardPager(
     onNext: () -> Unit,
     swipeTrigger: Boolean,                 // <-- новий параметр
     onSwipeConsumed: () -> Unit,
+    onSwipeLeft: (index: Int) -> Unit,
     modifier: Modifier = Modifier
 ) {
     if (words.isEmpty()) return
@@ -78,6 +80,7 @@ fun SwipeWordCardPager(
                 words = words,
                 isFlipped = false,
                 onFlip = {},
+                onSwipeLeft = onSwipeLeft,
                 modifier = Modifier.fillMaxSize()
             )
         }
@@ -87,6 +90,7 @@ fun SwipeWordCardPager(
                 words = oldWords!!,
                 isFlipped = oldIsFlipped,
                 onFlip = onFlip,
+                onSwipeLeft = onSwipeLeft,
                 modifier = Modifier
                     .fillMaxSize()
                     .offset { IntOffset(animOffset.toInt(), 0) }
@@ -96,6 +100,7 @@ fun SwipeWordCardPager(
                 words = words,
                 isFlipped = isFlipped,
                 onFlip = onFlip,
+                onSwipeLeft = onSwipeLeft,
                 modifier = Modifier.fillMaxSize()
             )
         }

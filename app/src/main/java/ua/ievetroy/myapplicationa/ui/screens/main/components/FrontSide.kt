@@ -17,7 +17,8 @@ import ua.ievetroy.myapplicationa.ui.theme.AppDimens
 @Composable
 fun FrontSide(
     words: List<Word>,
-    onFlip: () -> Unit
+    onFlip: () -> Unit,
+    onSwipeLeft: (index: Int) -> Unit
 ) {
     Column(modifier = Modifier.fillMaxSize()) {
         Row(
@@ -32,7 +33,10 @@ fun FrontSide(
             RotateCardButtonWordCard(onClick = onFlip)
         }
 
-        WordList(words = words) // ← список із ViewModel
+        WordList(
+            words = words,
+            onSwipeLeft = onSwipeLeft // ← ПЕРЕДАЄМО ДАЛІ
+        ) // ← список із ViewModel
     }
 }
 
