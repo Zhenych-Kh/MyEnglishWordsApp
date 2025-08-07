@@ -5,6 +5,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.res.stringResource
+import ua.ievetroy.myapplicationa.R
 import ua.ievetroy.myapplicationa.ui.screens.settings.SettingsItem
 
 @Composable
@@ -26,7 +28,7 @@ fun SettingsTheme(
     }
 
     SettingsItem(
-        title = "Тема",
+        title = stringResource(R.string.theme),
         value = selectedTheme,
         onClick = { showSheet = true }
     )

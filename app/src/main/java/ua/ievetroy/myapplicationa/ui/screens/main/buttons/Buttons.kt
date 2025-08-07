@@ -1,6 +1,7 @@
 package ua.ievetroy.myapplicationa.ui.screens.main.buttons
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import ua.ievetroy.myapplicationa.R
 import ua.ievetroy.myapplicationa.ui.buttons.AdaptiveButton
@@ -53,7 +54,7 @@ fun HomeButton() {
     AdaptiveTextButton(
         onClick = {},
         iconResId = R.drawable._homelearnpage,
-        text = "Вчити",
+        text = stringResource(id = R.string.learn),
         iconSize = AppDimens.HomeButton.sizeIcon,
         showButton = AppDimens.screenHeightDp >= 450,
     )
@@ -66,7 +67,7 @@ fun LibraryButton() {
     AdaptiveTextButton(
         onClick = {},
         iconResId = R.drawable._librarypage,
-        text = "Словник",
+        text = stringResource(id = R.string.dictionary),
         iconSize = AppDimens.LibraryButton.sizeIcon,
         showButton = AppDimens.screenHeightDp >= 450,
     )

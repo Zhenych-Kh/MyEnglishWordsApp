@@ -16,13 +16,17 @@ import androidx.compose.material3.ripple
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import ua.ievetroy.myapplicationa.R
 import ua.ievetroy.myapplicationa.ui.theme.AppTypography
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ContextMenuSheet(
+    isFlipped: Boolean,
     onNext: () -> Unit,
     onDismiss: () -> Unit
 ) {
@@ -37,22 +41,25 @@ fun ContextMenuSheet(
                 .verticalScroll(scrollState)
                 .padding(vertical = 8.dp)
         ) {
+            val textColor = if (isFlipped) Color.Gray else Color.Black
+            val alpha = if (isFlipped) 0.5f else 1f
+
             Text(
-                text = "Наступна картка",
+                stringResource(id = R.string.next_card),
                 modifier = Modifier
                     .fillMaxWidth()
+                    .alpha(alpha)
                     .clickable(
+                        enabled = !isFlipped,  // ← блокування свайпу при isFlipped
                         interactionSource = remember { MutableInteractionSource() },
-                        indication = ripple(
-                            bounded = true,
-                            color = Color.Gray
-                        ),
+                        indication = ripple(bounded = true, color = Color.Gray),
                         onClick = {
-                            onNext()      // ← ОНОВИТИ КАРТКУ
+                            onNext()
                         }
                     )
                     .padding(vertical = 24.dp, horizontal = 20.dp),
-                style = AppTypography.wordSheetSettings()
+                style = AppTypography.wordSheetSettings(),
+                color = textColor
             )
             Divider(
                 modifier = Modifier.padding(horizontal = 20.dp),
@@ -62,4 +69,5 @@ fun ContextMenuSheet(
         }
     }
 }
+
 

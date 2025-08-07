@@ -73,6 +73,7 @@ fun MainScreen(
     // --- UI ---
     if (showContextMenu) {
         ContextMenuSheet(
+            isFlipped = isFlipped,
             onNext = {
                 swipeTrigger = true
                 showContextMenu = false
@@ -108,9 +109,6 @@ fun MainScreen(
                     .fillMaxSize()
                     .then(AppModifiers.wordCardModifier)
             )
-
-
-
         }
         BottomBar(
             AppModifiers.bottomBarModifier

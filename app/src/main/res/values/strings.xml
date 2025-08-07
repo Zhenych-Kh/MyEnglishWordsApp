@@ -1,3 +1,40 @@
 <resources>
     <string name="app_name">My ApplicationA</string>
+
+    <!-- Основні тексти -->
+    <string name="next_card">Наступна картка</string>
+    <string name="learn">Вчити</string>
+    <string name="dictionary">Словник</string>
+    <string name="interface_language">Мова інтерфейсу</string>
+    <string name="words_per_day">Кількість слів/день</string>
+    <string name="auto_update_words">Автооновлення слів</string>
+    <string name="theme">Тема</string>
+    <string name="reset_progress">Очистити прогрес</string>
+
+    <!-- Значення для кількості слів -->
+    <string name="words">%1$d слів</string>
+
+
+    <!-- Теми -->
+    <string name="light_theme">Світла</string>
+    <string name="dark_theme">Темна</string>
+    <string name="system_theme">Системна</string>
+
+    <!-- Підтвердження -->
+    <string name="reset_confirm_question">Ви впевнені, що хочете очистити весь прогрес? Цю дію неможливо скасувати.</string>
+    <string name="confirm">Так</string>
+    <string name="cancel">Скасувати</string>
+
+    <!-- Мови -->
+    <string name="lang_ukrainian">Українська</string>
+    <string name="lang_polish">Польська</string>
+    <string name="lang_russian">Російська</string>
+    <string name="lang_spanish">Іспанська</string>
+    <string name="lang_portuguese">Португальська</string>
+    <string name="lang_chinese">Китайська</string>
+    <string name="lang_japanese">Японська</string>
+    <string name="lang_korean">Корейська</string>
+    <string name="lang_turkish">Турецька</string>
+    <string name="lang_french">Французька</string>
+    <string name="lang_german">Німецька</string>
 </resources>

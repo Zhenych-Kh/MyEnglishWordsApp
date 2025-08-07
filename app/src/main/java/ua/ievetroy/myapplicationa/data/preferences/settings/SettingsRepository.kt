@@ -12,7 +12,7 @@ class SettingsRepository(private val context: Context) {
         .map { it[SettingsKeys.WORDS_PER_DAY] ?: 5 }
 
     val language: Flow<String> = context.settingsDataStore.data
-        .map { it[SettingsKeys.LANGUAGE] ?: "Українська" }
+        .map { it[SettingsKeys.LANGUAGE] ?: "uk" } // ← "uk" — мова за замовчуванням
 
     val theme: Flow<String> = context.settingsDataStore.data
         .map { it[SettingsKeys.THEME] ?: "System" }
@@ -33,10 +33,15 @@ class SettingsRepository(private val context: Context) {
         }
     }
 
-    suspend fun setLanguage(lang: String) {
+    suspend fun setLanguage(langCode: String) {
         context.settingsDataStore.edit {
-            it[SettingsKeys.LANGUAGE] = lang
+            it[SettingsKeys.LANGUAGE] = langCode
         }
+
+        // Зберігаємо також у SharedPreferences — для attachBaseContext
+        context.getSharedPreferences("settings", Context.MODE_PRIVATE).edit()
+            .putString("language_code", langCode)
+            .apply()
     }
 
     suspend fun setTheme(theme: String) {

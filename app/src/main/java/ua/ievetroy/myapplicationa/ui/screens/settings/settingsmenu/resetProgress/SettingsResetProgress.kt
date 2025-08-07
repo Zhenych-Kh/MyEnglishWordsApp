@@ -9,6 +9,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
+import ua.ievetroy.myapplicationa.R
 import ua.ievetroy.myapplicationa.ui.screens.settings.SettingsItem
 
 @Composable
@@ -18,26 +20,26 @@ fun SettingsResetProgress(onResetConfirmed: () -> Unit = {}) {
     if (showDialog) {
         AlertDialog(
             onDismissRequest = { showDialog = false },
-            title = { Text("Очистити прогрес") },
-            text = { Text("Ви впевнені, що хочете очистити весь прогрес? Цю дію неможливо скасувати.") },
+            title = { Text(stringResource(R.string.reset_progress)) },
+            text = { Text(stringResource(R.string.reset_confirm_question),) },
             confirmButton = {
                 TextButton(onClick = {
                     showDialog = false
                     onResetConfirmed()
                 }) {
-                    Text("Так", color = Color.Red)
+                    Text(stringResource(R.string.confirm), color = Color.Red)
                 }
             },
             dismissButton = {
                 TextButton(onClick = { showDialog = false }) {
-                    Text("Скасувати")
+                    Text(stringResource(R.string.cancel))
                 }
             }
         )
     }
 
     SettingsItem(
-        title = "Очистити прогрес",
+        title = stringResource(R.string.reset_progress),
         value = "",
         onClick = { showDialog = true }
     )

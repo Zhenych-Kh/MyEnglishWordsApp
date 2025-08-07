@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Мое приложение</string>
+
+    <!-- Основные тексты -->
+    <string name="next_card">Следующая карточка</string>
+    <string name="learn">Учить</string>
+    <string name="dictionary">Словарь</string>
+    <string name="interface_language">Язык интерфейса</string>
+    <string name="words_per_day">Слов в день</string>
+    <string name="auto_update_words">Автообновление слов</string>
+    <string name="theme">Тема</string>
+    <string name="reset_progress">Сброс прогресса</string>
+
+    <!-- Значения для количества слов -->
+    <string name="words">%1$d слов</string>
+
+    <!-- Темы -->
+    <string name="light_theme">Светлая</string>
+    <string name="dark_theme">Тёмная</string>
+    <string name="system_theme">Системная</string>
+
+    <!-- Подтверждение -->
+    <string name="reset_confirm_question">Вы уверены, что хотите сбросить весь прогресс? Это действие невозможно отменить.</string>
+    <string name="confirm">Да</string>
+    <string name="cancel">Отмена</string>
+
+    <!-- Языки -->
+    <string name="lang_ukrainian">Украинский</string>
+    <string name="lang_polish">Польский</string>
+    <string name="lang_spanish">Испанский</string>
+    <string name="lang_portuguese">Португальский</string>
+    <string name="lang_chinese">Китайский</string>
+    <string name="lang_japanese">Японский</string>
+    <string name="lang_korean">Корейский</string>
+    <string name="lang_turkish">Турецкий</string>
+    <string name="lang_french">Французский</string>
+    <string name="lang_german">Немецкий</string>
+    <string name="lang_russian">Русский</string>
+</resources>

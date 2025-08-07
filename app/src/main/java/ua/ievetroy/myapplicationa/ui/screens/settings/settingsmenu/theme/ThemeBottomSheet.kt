@@ -16,6 +16,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
+import ua.ievetroy.myapplicationa.R
 import ua.ievetroy.myapplicationa.ui.screens.settings.components.SettingsOptionItem
 import ua.ievetroy.myapplicationa.ui.theme.AppColors
 
@@ -27,7 +29,13 @@ fun ThemeBottomSheet(
     onDismiss: () -> Unit
 ) {
     val sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
-    val themes = listOf("Світла", "Темна", "Системна")
+    val context = LocalContext.current
+    val themes = listOf(
+        context.getString(R.string.light_theme),
+        context.getString(R.string.dark_theme),
+        context.getString(R.string.system_theme)
+    )
+
 
     ModalBottomSheet(
         onDismissRequest = onDismiss,

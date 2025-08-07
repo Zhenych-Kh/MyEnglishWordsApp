@@ -13,7 +13,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import ua.ievetroy.myapplicationa.R
 import ua.ievetroy.myapplicationa.ui.screens.settings.SettingsDivider
 import ua.ievetroy.myapplicationa.ui.theme.AppTypography
 
@@ -29,7 +31,7 @@ fun SettingsToggle(
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Text("Автооновлення слів", style = AppTypography.wordTitleSettings())
+        Text(stringResource(R.string.auto_update_words), style = AppTypography.wordTitleSettings())
         Switch(
             checked = isEnabled,
             onCheckedChange = { onToggle(it) }  // ← ViewModel update
