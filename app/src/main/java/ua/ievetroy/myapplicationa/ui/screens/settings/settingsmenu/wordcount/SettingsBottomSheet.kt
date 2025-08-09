@@ -3,8 +3,10 @@ package ua.ievetroy.myapplicationa.ui.screens.settings.settingsmenu.wordcount
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
@@ -15,6 +17,7 @@ import androidx.compose.ui.unit.dp
 import ua.ievetroy.myapplicationa.R
 import ua.ievetroy.myapplicationa.ui.screens.settings.components.SettingsOptionItem
 import ua.ievetroy.myapplicationa.ui.theme.AppColors
+import ua.ievetroy.myapplicationa.ui.theme.AppDimens.WordCard.cornerRadius
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -30,7 +33,7 @@ fun WordCountBottomSheet(
     ModalBottomSheet(
         onDismissRequest = onDismiss,
         sheetState = sheetState,
-        containerColor = AppColors.AppBackgraundsTheme.BackgraundsLightsettings
+        containerColor = MaterialTheme.colorScheme.surface, shape = RoundedCornerShape(cornerRadius)
     ) {
         LazyColumn {
             itemsIndexed(options) { index, option ->
@@ -43,8 +46,6 @@ fun WordCountBottomSheet(
                 if (index != options.lastIndex) {
                     Divider(
                         modifier = Modifier.padding(horizontal = 20.dp),
-                        thickness = 1.dp,
-                        color = Color(0xFFE0E0E0)
                     )
                 }
             }

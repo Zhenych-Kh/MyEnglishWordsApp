@@ -2,8 +2,11 @@ package ua.ievetroy.myapplicationa.ui.theme
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import ua.ievetroy.myapplicationa.ui.theme.AppDimens.WordCard.cornerRadius
 
 object AppModifiers {
 
@@ -36,7 +39,7 @@ object AppModifiers {
     val rootColumnModifier: Modifier
         @Composable get() = Modifier
             .fillMaxSize()
-            .background(AppColors.AppBackgraundsTheme.BackgraundsLight)
+            .background(MaterialTheme.colorScheme.background)
             .statusBarsPadding()
             .navigationBarsPadding()
 }

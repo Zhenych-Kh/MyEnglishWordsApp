@@ -10,6 +10,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.Text
 import androidx.compose.material3.ripple
@@ -20,7 +21,10 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.google.firebase.crashlytics.buildtools.reloc.com.google.common.collect.Multimaps.index
+import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.client.methods.RequestBuilder.options
 import ua.ievetroy.myapplicationa.R
+import ua.ievetroy.myapplicationa.ui.screens.settings.SettingsDivider
 import ua.ievetroy.myapplicationa.ui.theme.AppTypography
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -33,6 +37,7 @@ fun ContextMenuSheet(
     ModalBottomSheet(
         onDismissRequest = onDismiss,
         shape = RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp),
+        containerColor = MaterialTheme.colorScheme.surface
     ) {
         val scrollState = rememberScrollState()
         Column(
@@ -59,12 +64,10 @@ fun ContextMenuSheet(
                     )
                     .padding(vertical = 24.dp, horizontal = 20.dp),
                 style = AppTypography.wordSheetSettings(),
-                color = textColor
+                color = MaterialTheme.colorScheme.onSurface
             )
             Divider(
                 modifier = Modifier.padding(horizontal = 20.dp),
-                thickness = 1.dp,
-                color = Color(0xFFE0E0E0)
             )
         }
     }

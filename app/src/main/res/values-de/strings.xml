@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Meine App</string>
+
+    <!-- Grundtexte -->
+    <string name="next_card">Nächste Karte</string>
+    <string name="learn">Lernen</string>
+    <string name="dictionary">Wörterbuch</string>
+    <string name="interface_language">Sprache der Benutzeroberfläche</string>
+    <string name="words_per_day">Wörter pro Tag</string>
+    <string name="auto_update_words">Automatische Aktualisierung der Wörter</string>
+    <string name="theme">Design</string>
+    <string name="reset_progress">Fortschritt zurücksetzen</string>
+
+    <!-- Zahlenwerte -->
+    <string name="words">%1$d Wörter</string>
+
+    <!-- Designs -->
+    <string name="light_theme">Hell</string>
+    <string name="dark_theme">Dunkel</string>
+    <string name="system_theme">System</string>
+
+    <!-- Bestätigung -->
+    <string name="reset_confirm_question">Bist du sicher, dass du den gesamten Fortschritt zurücksetzen möchtest? Diese Aktion kann nicht rückgängig gemacht werden.</string>
+    <string name="confirm">Ja</string>
+    <string name="cancel">Abbrechen</string>
+
+    <!-- Sprachen -->
+    <string name="lang_ukrainian">Ukrainisch</string>
+    <string name="lang_polish">Polnisch</string>
+    <string name="lang_spanish">Spanisch</string>
+    <string name="lang_portuguese">Portugiesisch</string>
+    <string name="lang_turkish">Türkisch</string>
+    <string name="lang_french">Französisch</string>
+    <string name="lang_german">Deutsch</string>
+    <string name="lang_russian">Russisch</string>
+</resources>

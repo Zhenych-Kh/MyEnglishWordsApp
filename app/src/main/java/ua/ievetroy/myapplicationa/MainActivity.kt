@@ -6,9 +6,16 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.lifecycle.viewmodel.compose.viewModel
 import ua.ievetroy.myapplicationa.data.preferences.settings.SettingsRepository
 import ua.ievetroy.myapplicationa.ui.LocaleHelper
 import ua.ievetroy.myapplicationa.ui.screens.main.MainScreen
+import ua.ievetroy.myapplicationa.ui.theme.AppTheme
+import ua.ievetroy.myapplicationa.ui.viewmodel.settings.SettingsViewModel
+import ua.ievetroy.myapplicationa.ui.viewmodel.settings.SettingsViewModelFactory
 
 class MainActivity : ComponentActivity() {
 
@@ -29,8 +36,23 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
 
         setContent {
-            AppNavHost(repository = repository)
+            val settingsVm: SettingsViewModel = viewModel(
+                factory = SettingsViewModelFactory(repository)
+            )
+            val themeCode by settingsVm.selectedTheme.collectAsState()
+
+            val isDark = when (themeCode) {
+                "dark" -> true
+                "light" -> false
+                else -> isSystemInDarkTheme()
+            }
+
+            AppTheme(darkTheme = isDark) {
+                AppNavHost(repository = repository)
+            }
         }
+
+
     }
 }
 

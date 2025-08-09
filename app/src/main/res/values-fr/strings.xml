@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mon application</string>
+
+    <!-- Textes de base -->
+    <string name="next_card">Carte suivante</string>
+    <string name="learn">Apprendre</string>
+    <string name="dictionary">Dictionnaire</string>
+    <string name="interface_language">Langue de l’interface</string>
+    <string name="words_per_day">Mots par jour</string>
+    <string name="auto_update_words">Mise à jour automatique des mots</string>
+    <string name="theme">Thème</string>
+    <string name="reset_progress">Réinitialiser la progression</string>
+
+    <!-- Valeurs numériques -->
+    <string name="words">%1$d mots</string>
+
+    <!-- Thèmes -->
+    <string name="light_theme">Clair</string>
+    <string name="dark_theme">Sombre</string>
+    <string name="system_theme">Système</string>
+
+    <!-- Confirmation -->
+    <string name="reset_confirm_question">Êtes-vous sûr de vouloir réinitialiser toute la progression ? Cette action est irréversible.</string>
+    <string name="confirm">Oui</string>
+    <string name="cancel">Annuler</string>
+
+    <!-- Langues -->
+    <string name="lang_ukrainian">Ukrainien</string>
+    <string name="lang_polish">Polonais</string>
+    <string name="lang_spanish">Espagnol</string>
+    <string name="lang_portuguese">Portugais</string>
+    <string name="lang_turkish">Turc</string>
+    <string name="lang_french">Français</string>
+    <string name="lang_german">Allemand</string>
+    <string name="lang_russian">Russe</string>
+</resources>

@@ -15,7 +15,7 @@ class SettingsRepository(private val context: Context) {
         .map { it[SettingsKeys.LANGUAGE] ?: "uk" } // ← "uk" — мова за замовчуванням
 
     val theme: Flow<String> = context.settingsDataStore.data
-        .map { it[SettingsKeys.THEME] ?: "System" }
+        .map { it[SettingsKeys.THEME] ?: "system" }
 
     val toggleExample: Flow<Boolean> = context.settingsDataStore.data
         .map { it[SettingsKeys.TOGGLE_EXAMPLE] ?: false }
@@ -44,9 +44,7 @@ class SettingsRepository(private val context: Context) {
             .apply()
     }
 
-    suspend fun setTheme(theme: String) {
-        context.settingsDataStore.edit {
-            it[SettingsKeys.THEME] = theme
-        }
+    suspend fun setTheme(code: String) {
+        context.settingsDataStore.edit { it[SettingsKeys.THEME] = code }
     }
 }

@@ -1,5 +1,6 @@
 package ua.ievetroy.myapplicationa.ui.theme
 
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalConfiguration
@@ -63,39 +64,46 @@ object AppTypography {
     @Composable
     fun wordTitleSettings() = TextStyle(
         fontWeight = FontWeight.Bold,
-        fontSize = wordTitleSettingsFontSize
+        fontSize = wordTitleSettingsFontSize,
+        color = MaterialTheme.colorScheme.onSurface
+
     )
 
     @Composable
     fun wordSheetSettings() = TextStyle(
         fontWeight = FontWeight.Normal,
-        fontSize = wordTitleSettingsFontSize
+        fontSize = wordTitleSettingsFontSize,
+        color = MaterialTheme.colorScheme.onSurface
     )
 
     @Composable
     fun labelSmall() = TextStyle(
         fontWeight = FontWeight.Normal,
-        fontSize = labelSmallFontSize
+        fontSize = labelSmallFontSize,
+        color = MaterialTheme.colorScheme.onSurface
     )
 
     @Composable
     fun wordTitle() = TextStyle(
         fontWeight = FontWeight.Bold,
         fontSize = wordTitleFontSize,
-        color = AppColors.AppBackgraundsTheme.TextColorWordCard
+        color = MaterialTheme.colorScheme.onSurface
+
     )
 
     @Composable
     fun wordTranslation() = TextStyle(
         fontWeight = FontWeight.Light,
         fontSize = wordTranslationFontSize,
-        color = AppColors.AppBackgraundsTheme.TextColorWordCard
+        color = MaterialTheme.colorScheme.onSurface
+
     )
 
     @Composable
     fun exampleSentence() = TextStyle(
         fontWeight = FontWeight.Light,
         fontSize = exampleSentenceFontSize,
-        color = AppColors.AppBackgraundsTheme.TextColorWordCard
+        color = MaterialTheme.colorScheme.onSurface
+
     )
 }

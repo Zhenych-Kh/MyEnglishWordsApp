@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Meu aplicativo</string>
+
+    <string name="next_card">Próximo cartão</string>
+    <string name="learn">Aprender</string>
+    <string name="dictionary">Dicionário</string>
+    <string name="interface_language">Idioma da interface</string>
+    <string name="words_per_day">Palavras por dia</string>
+    <string name="auto_update_words">Atualização automática de palavras</string>
+    <string name="theme">Tema</string>
+    <string name="reset_progress">Redefinir progresso</string>
+
+    <string name="words">%1$d palavras</string>
+
+    <string name="light_theme">Claro</string>
+    <string name="dark_theme">Escuro</string>
+    <string name="system_theme">Do sistema</string>
+
+    <string name="reset_confirm_question">Tem certeza de que deseja redefinir todo o progresso? Esta ação não pode ser desfeita.</string>
+    <string name="confirm">Sim</string>
+    <string name="cancel">Cancelar</string>
+
+    <string name="lang_ukrainian">Ucraniano</string>
+    <string name="lang_polish">Polonês</string>
+    <string name="lang_spanish">Espanhol</string>
+    <string name="lang_portuguese">Português</string>
+    <string name="lang_turkish">Turco</string>
+    <string name="lang_french">Francês</string>
+    <string name="lang_german">Alemão</string>
+    <string name="lang_russian">Russo</string>
+</resources>

@@ -18,7 +18,6 @@ import ua.ievetroy.myapplicationa.ui.SwipeWordCardPager
 import ua.ievetroy.myapplicationa.ui.screens.main.bars.BottomBar
 import ua.ievetroy.myapplicationa.ui.screens.main.bars.TopBar
 import ua.ievetroy.myapplicationa.ui.screens.main.components.ContextMenuSheet
-import ua.ievetroy.myapplicationa.ui.screens.main.util.SetStatusBarColors
 import ua.ievetroy.myapplicationa.ui.screens.main.util.provideWordOrderRepository
 import ua.ievetroy.myapplicationa.ui.screens.main.util.provideWordRepository
 import ua.ievetroy.myapplicationa.ui.theme.AppModifiers
@@ -31,7 +30,6 @@ fun MainScreen(
     onSettingsClick: () -> Unit,
     settingsViewModel: SettingsViewModel
 ) {
-    SetStatusBarColors(isDarkTheme = false)
 
     val context = LocalContext.current
     val wordRepository = remember { provideWordRepository(context) }

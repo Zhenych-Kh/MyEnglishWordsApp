@@ -11,27 +11,27 @@ import ua.ievetroy.myapplicationa.ui.screens.settings.SettingsItem
 
 @Composable
 fun SettingsTheme(
-    selectedTheme: String,
+    selectedThemeCode: String,
     onSelect: (String) -> Unit
 ) {
-    var showSheet by remember { mutableStateOf(false) }
+    var show by remember { mutableStateOf(false) }
+    val name = stringResource(ThemeUtils.codeToStringRes.getValue(selectedThemeCode))
 
-    if (showSheet) {
+    if (show) {
         ThemeBottomSheet(
-            selectedTheme = selectedTheme,
-            onSelect = {
-                onSelect(it)            // ← ViewModel update
-                showSheet = false
-            },
-            onDismiss = { showSheet = false }
+            selectedThemeCode = selectedThemeCode,
+            onSelect = { code -> onSelect(code); show = false },
+            onDismiss = { show = false }
         )
     }
 
     SettingsItem(
         title = stringResource(R.string.theme),
-        value = selectedTheme,
-        onClick = { showSheet = true }
+        value = name,
+        onClick = { show = true }
     )
 }
+
+
 
 

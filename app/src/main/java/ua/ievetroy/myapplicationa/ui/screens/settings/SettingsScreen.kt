@@ -92,8 +92,8 @@ fun SettingsScreen(
 
         item {
             SettingsTheme(
-                selectedTheme = selectedTheme,
-                onSelect = { viewModel.setTheme(it) }
+                selectedThemeCode = selectedTheme, // тут вже має бути код, а не переклад
+                onSelect = { code -> viewModel.setTheme(code) }
             )
         }
 

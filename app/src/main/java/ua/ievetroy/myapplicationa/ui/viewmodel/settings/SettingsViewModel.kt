@@ -25,8 +25,8 @@ class SettingsViewModel(
 
     val selectedTheme = repository.theme.stateIn(
         scope = viewModelScope,
-        started = SharingStarted.Companion.WhileSubscribed(5000),
-        initialValue = "Світла"
+        started = SharingStarted.WhileSubscribed(5000),
+        initialValue = "system"
     )
 
     val toggleExample = repository.toggleExample.stateIn(
@@ -54,10 +54,8 @@ class SettingsViewModel(
         }
     }
 
-    fun setTheme(theme: String) {
-        viewModelScope.launch {
-            repository.setTheme(theme)
-        }
+    fun setTheme(themeCode: String) = viewModelScope.launch {
+        repository.setTheme(themeCode)
     }
 
     fun resetProgress() {

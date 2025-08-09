@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Uygulamam</string>
+
+    <string name="next_card">Sonraki kart</string>
+    <string name="learn">Öğren</string>
+    <string name="dictionary">Sözlük</string>
+    <string name="interface_language">Arayüz dili</string>
+    <string name="words_per_day">Günde kelime sayısı</string>
+    <string name="auto_update_words">Kelimeleri otomatik güncelle</string>
+    <string name="theme">Tema</string>
+    <string name="reset_progress">İlerlemeyi sıfırla</string>
+
+    <string name="words">%1$d kelime</string>
+
+    <string name="light_theme">Açık</string>
+    <string name="dark_theme">Koyu</string>
+    <string name="system_theme">Sistem</string>
+
+    <string name="reset_confirm_question">Tüm ilerlemeyi sıfırlamak istediğinizden emin misiniz? Bu işlem geri alınamaz.</string>
+    <string name="confirm">Evet</string>
+    <string name="cancel">İptal</string>
+
+    <string name="lang_ukrainian">Ukraynaca</string>
+    <string name="lang_polish">Lehçe</string>
+    <string name="lang_spanish">İspanyolca</string>
+    <string name="lang_portuguese">Portekizce</string>
+    <string name="lang_turkish">Türkçe</string>
+    <string name="lang_french">Fransızca</string>
+    <string name="lang_german">Almanca</string>
+    <string name="lang_russian">Rusça</string>
+</resources>

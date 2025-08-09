@@ -7,9 +7,11 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
@@ -28,6 +30,7 @@ import ua.ievetroy.myapplicationa.R
 import ua.ievetroy.myapplicationa.ui.LocaleHelper
 import ua.ievetroy.myapplicationa.ui.screens.settings.components.SettingsOptionItem
 import ua.ievetroy.myapplicationa.ui.theme.AppColors
+import ua.ievetroy.myapplicationa.ui.theme.AppDimens.WordCard.cornerRadius
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -48,9 +51,6 @@ fun LanguageBottomSheet(
         "pl" to stringResource(R.string.lang_polish),
         "es" to stringResource(R.string.lang_spanish),
         "pt" to stringResource(R.string.lang_portuguese),
-        "zh" to stringResource(R.string.lang_chinese),
-        "ja" to stringResource(R.string.lang_japanese),
-        "ko" to stringResource(R.string.lang_korean),
         "tr" to stringResource(R.string.lang_turkish),
         "fr" to stringResource(R.string.lang_french),
         "de" to stringResource(R.string.lang_german)
@@ -85,7 +85,7 @@ fun LanguageBottomSheet(
     ModalBottomSheet(
         onDismissRequest = onDismiss,
         sheetState = sheetState,
-        containerColor = AppColors.AppBackgraundsTheme.BackgraundsLightsettings
+        containerColor = MaterialTheme.colorScheme.surface, shape = RoundedCornerShape(cornerRadius)
     ) {
         Column(
             modifier = Modifier
@@ -120,8 +120,6 @@ fun LanguageBottomSheet(
                 if (index != languageDisplayNames.size - 1) {
                     Divider(
                         modifier = Modifier.padding(horizontal = 20.dp),
-                        thickness = 1.dp,
-                        color = Color(0xFFE0E0E0)
                     )
                 }
             }
