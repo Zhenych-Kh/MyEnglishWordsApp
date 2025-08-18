@@ -48,7 +48,7 @@ fun WordItem(
     val offsetX = remember { Animatable(0f) }
     val scope = rememberCoroutineScope() // ← Додаємо Scope
 
-    val swipeThreshold = 530f
+    val swipeThreshold = 500f
 
     Box(
         modifier = modifier
