@@ -10,6 +10,7 @@ import ua.ievetroy.myapplicationa.ui.viewmodel.settings.SettingsViewModelFactory
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import androidx.compose.animation.*
+import ua.ievetroy.myapplicationa.ui.screens.library.LibraryScreen
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
@@ -24,7 +25,8 @@ fun AppNavHost(repository: SettingsRepository) {
         composable("main") {
             MainScreen(
                 onSettingsClick = { navController.navigate("settings") },
-                settingsViewModel = settingsViewModel
+                settingsViewModel = settingsViewModel,
+                navController = navController
             )
         }
         composable(
@@ -39,6 +41,12 @@ fun AppNavHost(repository: SettingsRepository) {
                 repository = repository
             )
         }
+        composable("library") {
+            LibraryScreen(
+                onBack = { navController.popBackStack() }
+            )
+        }
+
     }
 }
 

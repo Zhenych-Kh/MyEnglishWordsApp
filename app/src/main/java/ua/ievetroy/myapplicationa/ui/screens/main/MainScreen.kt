@@ -14,6 +14,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
+import androidx.navigation.navOptions
 import ua.ievetroy.myapplicationa.ui.SwipeWordCardPager
 import ua.ievetroy.myapplicationa.ui.screens.main.bars.BottomBar
 import ua.ievetroy.myapplicationa.ui.screens.main.bars.TopBar
@@ -28,7 +30,8 @@ import ua.ievetroy.myapplicationa.ui.viewmodel.wordViewModel.WordViewModelFactor
 @Composable
 fun MainScreen(
     onSettingsClick: () -> Unit,
-    settingsViewModel: SettingsViewModel
+    settingsViewModel: SettingsViewModel,
+    navController: NavController
 ) {
 
     val context = LocalContext.current
@@ -108,8 +111,10 @@ fun MainScreen(
                     .then(AppModifiers.wordCardModifier)
             )
         }
+
         BottomBar(
-            AppModifiers.bottomBarModifier
+            AppModifiers.bottomBarModifier,
+            navController = navController
         )
     }
 }

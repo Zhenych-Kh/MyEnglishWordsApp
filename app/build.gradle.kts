@@ -54,6 +54,7 @@ dependencies {
     implementation(libs.androidx.animation)
     implementation(libs.androidx.ui.unit)
     implementation(libs.androidx.runtime)
+    implementation(libs.litert.support.api)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

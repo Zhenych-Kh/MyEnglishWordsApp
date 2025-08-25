@@ -3,6 +3,7 @@ package ua.ievetroy.myapplicationa.ui.screens.main.buttons
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
 import ua.ievetroy.myapplicationa.R
 import ua.ievetroy.myapplicationa.ui.buttons.AdaptiveButton
 import ua.ievetroy.myapplicationa.ui.buttons.AdaptiveButtonVoice
@@ -61,17 +62,17 @@ fun HomeButton() {
 }
 
 
-@Preview
 @Composable
-fun LibraryButton() {
+fun LibraryButton(navController: NavController) {
     AdaptiveTextButton(
-        onClick = {},
+        onClick = { navController.navigate("library") },
         iconResId = R.drawable._librarypage,
         text = stringResource(id = R.string.dictionary),
         iconSize = AppDimens.LibraryButton.sizeIcon,
         showButton = AppDimens.screenHeightDp >= 450,
     )
 }
+
 
 @Preview
 @Composable
