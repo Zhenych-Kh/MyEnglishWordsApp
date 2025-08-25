@@ -5,6 +5,7 @@ import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -40,43 +41,47 @@ fun WordCard(
     val cameraDistance = 12 * LocalDensity.current.density
     val cornerRadius = AppDimens.WordCard.cornerRadius
 
-    val isDark = isSystemInDarkTheme()
+    val blur = 17.dp      // як у твоїй тіні
+    val yOff = 0.dp       // як у твоїй тіні
 
-    Box(
-        modifier = modifier
-            .graphicsLayer {
-                this.rotationY = rotationY
-                this.cameraDistance = cameraDistance
-            }
-            .themedShadow(
-                light = ShadowParams(
-                    alpha = 0.30f,
-                    cornerRadius = cornerRadius,
-                    blurRadius = 20.dp,
-                    yOffset = 0f,
-                    xOffset = 0f,
-                    color = Color.Black
-                ),
-                dark = ShadowParams(
-                    alpha = 0.5f,
-                    cornerRadius = cornerRadius,
-                    blurRadius = 7.dp,
-                    yOffset = 0f,
-                    xOffset = 0f,
-                    color = Color.White
+    Box(Modifier.padding(bottom = blur + yOff + 4.dp)) {      // поле для тіні
+        Box(
+            modifier = modifier
+                .graphicsLayer {
+                    this.rotationY = rotationY
+                    this.cameraDistance = cameraDistance
+                }
+                .themedShadow(
+                    light = ShadowParams(
+                        alpha = 0.30f,
+                        cornerRadius = cornerRadius,
+                        blurRadius = 20.dp,
+                        yOffset = 0f,
+                        xOffset = 0f,
+                        color = Color.Black
+                    ),
+                    dark = ShadowParams(
+                        alpha = 0.5f,
+                        cornerRadius = cornerRadius,
+                        blurRadius = 7.dp,
+                        yOffset = 0f,
+                        xOffset = 0f,
+                        color = Color.White
+                    )
                 )
-            )
-            .background(MaterialTheme.colorScheme.surface, shape = RoundedCornerShape(cornerRadius))
-    ) {
-        DebugThemeFlag()
-        if (rotationY <= 90f) {
-            FrontSide(words = words, onFlip = onFlip, onSwipeLeft = onSwipeLeft)
-        } else {
-            Box(modifier = Modifier.graphicsLayer { this.rotationY = 180f }) {
-                BackSide(onFlip = onFlip)
+                .background(MaterialTheme.colorScheme.surface, shape = RoundedCornerShape(cornerRadius))
+        ) {
+            DebugThemeFlag()
+            if (rotationY <= 90f) {
+                FrontSide(words = words, onFlip = onFlip, onSwipeLeft = onSwipeLeft)
+            } else {
+                Box(modifier = Modifier.graphicsLayer { this.rotationY = 180f }) {
+                    BackSide(onFlip = onFlip)
+                }
             }
         }
     }
+
 
 
 }

@@ -10,6 +10,7 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.compose.rememberNavController
 import ua.ievetroy.myapplicationa.data.preferences.settings.SettingsRepository
 import ua.ievetroy.myapplicationa.ui.LocaleHelper
 import ua.ievetroy.myapplicationa.ui.screens.main.MainScreen
@@ -31,6 +32,9 @@ class MainActivity : ComponentActivity() {
         super.attachBaseContext(context)
     }
 
+    private val settingsRepository by lazy { SettingsRepository(applicationContext) }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -48,7 +52,7 @@ class MainActivity : ComponentActivity() {
             }
 
             AppTheme(darkTheme = isDark) {
-                AppNavHost(repository = repository)
+                AppRoot(repository = settingsRepository)
             }
         }
 

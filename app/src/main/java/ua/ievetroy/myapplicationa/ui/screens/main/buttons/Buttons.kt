@@ -49,11 +49,10 @@ fun RotateCardButtonTopBar(onClick: () -> Unit) {
     )
 }
 
-@Preview
 @Composable
-fun HomeButton() {
+fun HomeButton(navController: NavController) {
     AdaptiveTextButton(
-        onClick = {},
+        onClick = { navController.navigate("main") },
         iconResId = R.drawable._homelearnpage,
         text = stringResource(id = R.string.learn),
         iconSize = AppDimens.HomeButton.sizeIcon,

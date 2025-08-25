@@ -23,7 +23,7 @@ object AppModifiers {
         @Composable get() = Modifier
             .fillMaxWidth()
             .padding(
-                top = AppDimens.BottomBar.paddingTop,
+                //top = AppDimens.BottomBar.paddingTop,
                 start = AppDimens.BottomBar.paddingSides,
                 end = AppDimens.BottomBar.paddingSides
             )

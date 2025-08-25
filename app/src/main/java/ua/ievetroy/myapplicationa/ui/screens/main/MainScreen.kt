@@ -31,7 +31,7 @@ import ua.ievetroy.myapplicationa.ui.viewmodel.wordViewModel.WordViewModelFactor
 fun MainScreen(
     onSettingsClick: () -> Unit,
     settingsViewModel: SettingsViewModel,
-    navController: NavController
+    navController: NavController,
 ) {
 
     val context = LocalContext.current
@@ -112,10 +112,10 @@ fun MainScreen(
             )
         }
 
-        BottomBar(
-            AppModifiers.bottomBarModifier,
-            navController = navController
-        )
+//        BottomBar(
+//            AppModifiers.bottomBarModifier,
+//            navController = navController
+//        )
     }
 }
 

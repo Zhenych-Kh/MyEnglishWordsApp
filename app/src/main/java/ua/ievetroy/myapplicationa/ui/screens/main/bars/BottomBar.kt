@@ -21,7 +21,7 @@ fun BottomBar(
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween,
     ) {
-        HomeButton()
+        HomeButton(navController)
         LibraryButton(navController)
     }
 }
